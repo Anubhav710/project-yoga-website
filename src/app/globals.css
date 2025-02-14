@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-txt {
+  font-size: clamp(63px, 10.6vw, 200px);
+}
+.hero-image-size {
+  height: clamp(500px, 28vw, 800px);
+  width: clamp(420px, 55vw, 1350px);
+}
+
+.header-txt-2 {
+  font-size: clamp(76px, 10vw, 200px);
+}
+.heading-txt-2-line-height {
+  line-height: clamp(72px, 10vw, 200px);
+}
+
+.para-txt {
+  font-size: clamp(16px, 2vw, 40px);
+}
+
+.cta2-heading {
+  font-size: clamp(30px, 2.2vw, 42px);
+}
+
+.conatct-us-heading {
+  font-size: clamp(36px, 2.2vw, 42px);
+}
+
+.slider {
+  width: 100%;
+  height: var(--height);
+
+  overflow: hidden;
+}
+
+.list {
+  width: 100%;
+  height: var(--height);
+  display: flex;
+  min-width: calc(var(--quantity) * var(--width));
+  position: relative;
+}
+.item {
+  width: 100%;
+  position: absolute;
+  left: 100%;
+  animation: autoRun 10s linear infinite;
+  animation-delay: calc((10s / 10) * (var(--position) - 1) - 10s) !important;
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--width) * -1);
+  }
+}
+
+.contact-us-heading {
+  font-size: clamp(30px, 2.2vw, 42px);
+}
+
+.about-header {
+  position: absolute;
+  left: 125px;
+  top: 0;
+}
+
+.heading {
+  font-size: clamp(60px, 9vw, 180px);
+}
+
+.common-margin {
+  @apply sm:mt-32 mt-16;
+}
+.common-margin-bottom {
+  @apply sm:mt-32 mt-16;
+}
+.common-padding {
+  @apply sm:pt-32 pt-16 px-3 sm:px-5;
+}
+
+.common-padding-bottom {
+  @apply sm:pb-32 pb-16;
+}
+
+.retreatSliderHeading {
+  font-size: clamp(36px, 3vw, 60px);
+}
+
+.cta-2-sub-heading {
+  font-size: clamp(1rem, 3.5vw, 7.2rem);
+}
+.cta-2-heading {
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+}
+
+.testimonials-heding {
+  font-size: clamp(0.9rem, 1.7vw, 1.5rem);
+}
+
+.common-paragraph {
+  font-size: clamp(1rem, 2.2vw, 5rem);
+}
+
+.bf-width {
+  width: clamp(154px, 24vw, 500px);
+}
+
+.scroll-txt {
+  font-size: clamp(32px, 4.2vw, 80px);
+}
+
+.info-height {
+  height: clamp(240px, 30vw, 980px);
+}
+
+.banner-height {
+  height: clamp(240px, 40vw, 780px);
+}
