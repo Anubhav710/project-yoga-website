@@ -42,7 +42,7 @@ const TimeTable = () => {
   // Check if we're on mobile
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 848);
     };
 
     // Initial check
