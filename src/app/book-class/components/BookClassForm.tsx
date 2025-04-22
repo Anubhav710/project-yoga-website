@@ -1,7 +1,44 @@
+"use client";
 import CustomButton from "@/components/ui/Button";
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+
+// Class options data
+const classOptions = [
+  { value: "yoga", label: "Yoga Class" },
+  { value: "pilates", label: "Pilates Class" },
+  { value: "meditation", label: "Meditation Class" },
+  { value: "dance", label: "Dance Class" },
+  { value: "strength", label: "Strength Training Class" },
+];
 
 const BookClassForm = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedClass, setSelectedClass] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Handle option selection
+  const handleOptionClick = (value: string, label: string) => {
+    setSelectedClass(label);
+    setIsOpen(false);
+  };
+
   return (
     <section className="common-padding common-padding-bottom">
       <form action="" className="max-w-4xl mx-auto flex flex-col gap-10">
@@ -31,17 +68,74 @@ const BookClassForm = () => {
         </div>
         <div className="flex flex-col gap-4">
           <label htmlFor="class">Book A Class</label>
-          <select
-            id="class"
-            className="border-b bg-transparent border-dark-green/40 focus:outline-none focus:border-b focus:border-b-dark-green py-2"
-          >
-            <option value="">Select a class</option>
-            <option value="yoga">Yoga Class</option>
-            <option value="pilates">Pilates Class</option>
-            <option value="meditation">Meditation Class</option>
-            <option value="dance">Dance Class</option>
-            <option value="strength">Strength Training Class</option>
-          </select>
+          <div className="relative" ref={dropdownRef}>
+            {/* Hidden actual select for form submission */}
+            <select name="class" className="hidden">
+              {classOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+
+            {/* Custom dropdown trigger */}
+            <div
+              className="cursor-pointer border-b bg-transparent border-dark-green/40 focus:outline-none py-2 flex justify-between items-center text-dark-green"
+              onClick={() => setIsOpen(!isOpen)}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setIsOpen(!isOpen);
+                  e.preventDefault();
+                }
+              }}
+              aria-haspopup="listbox"
+              aria-expanded={isOpen}
+              role="combobox"
+            >
+              <span className={selectedClass ? "" : "text-dark-green/60"}>
+                {selectedClass || "Select a class"}
+              </span>
+              <svg
+                className={`fill-current h-4 w-4 transition-transform duration-300 ${
+                  isOpen ? "rotate-180" : ""
+                }`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </div>
+
+            {/* Dropdown options */}
+            {isOpen && (
+              <div
+                className="absolute z-10 mt-1 w-full bg-white border border-dark-green/20 rounded-md shadow-lg max-h-60 overflow-auto"
+                role="listbox"
+              >
+                {classOptions.map((option) => (
+                  <div
+                    key={option.value}
+                    className="cursor-pointer px-4 py-2 hover:bg-dark-green/10 text-dark-green"
+                    onClick={() =>
+                      handleOptionClick(option.value, option.label)
+                    }
+                    role="option"
+                    aria-selected={selectedClass === option.label}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        handleOptionClick(option.value, option.label);
+                        e.preventDefault();
+                      }
+                    }}
+                  >
+                    {option.label}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="flex flex-col gap-4">
           <label htmlFor="message">Message</label>
