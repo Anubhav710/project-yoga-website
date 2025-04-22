@@ -11,7 +11,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Your e-mail"
-              className="bg-transparent outline-none border-b border-b-white placeholder:text-white w-full py-2"
+              className="bg-transparent text-white outline-none border-b border-b-white placeholder:text-white w-full py-2"
             />
           </div>
           <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-10 md:gap-32 ml-5">
