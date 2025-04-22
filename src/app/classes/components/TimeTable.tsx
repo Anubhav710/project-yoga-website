@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const timeSlots = [
   "09.00 - 10.00",
@@ -35,8 +36,38 @@ const classData = {
 };
 
 const TimeTable = () => {
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if we're on mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkIfMobile();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkIfMobile);
+
+    // Clean up
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
+  const nextDay = () => {
+    setCurrentDayIndex((prev) => (prev === weekDays.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevDay = () => {
+    setCurrentDayIndex((prev) => (prev === 0 ? weekDays.length - 1 : prev - 1));
+  };
+
+  // Visible days based on screen size
+  const visibleDays = isMobile ? [weekDays[currentDayIndex]] : weekDays;
+
   return (
-    <section className="max-w-[1200px] mx-auto  overflow-x-auto common-padding common-padding-bottom">
+    <section className="max-w-[1200px] mx-auto common-padding common-padding-bottom">
       <div className="">
         <div className="w-max mx-auto">
           <Image
@@ -53,34 +84,104 @@ const TimeTable = () => {
         </h1>
       </div>
 
-      <div className="min-w-[800px]">
-        <div className="grid grid-cols-8">
-          <div className="border border-gray-600 text-center py-3"></div>
-          {weekDays.map((day, index) => (
-            <div
-              key={index}
-              className="border-y border-r bg-[#F0F0F0] border-gray-600 text-center py-3 text-sm md:text-base"
+      {/* Mobile Day Navigation */}
+      {isMobile && (
+        <div className="flex items-center justify-between mb-4">
+          <button
+            onClick={prevDay}
+            className="bg-dark-green text-white p-2 rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+            aria-label="Previous day"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
             >
-              {day}
+              <path
+                fillRule="evenodd"
+                d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <h2 className="text-lg font-medium text-dark-green">
+            {weekDays[currentDayIndex]}
+          </h2>
+
+          <button
+            onClick={nextDay}
+            className="bg-dark-green text-white p-2 rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+            aria-label="Next day"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                fillRule="evenodd"
+                d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      <div
+        className={`${
+          isMobile ? "min-w-full" : "min-w-[800px] overflow-x-auto"
+        }`}
+      >
+        <div className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-8"}`}>
+          <div className="border border-gray-600 text-center py-3"></div>
+          {isMobile ? (
+            <div className="border-y border-r bg-[#F0F0F0] border-gray-600 text-center py-3 text-sm md:text-base">
+              {weekDays[currentDayIndex]}
             </div>
-          ))}
+          ) : (
+            weekDays.map((day, index) => (
+              <div
+                key={index}
+                className="border-y border-r bg-[#F0F0F0] border-gray-600 text-center py-3 text-sm md:text-base"
+              >
+                {day}
+              </div>
+            ))
+          )}
         </div>
 
         {timeSlots.map((timeSlot, index) => (
-          <div key={index} className="grid grid-cols-8">
+          <div
+            key={index}
+            className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-8"}`}
+          >
             <div className="text-center place-content-center border-x border-b border-gray-600 text-sm md:text-base">
               {timeSlot}
             </div>
-            {weekDays.map((_, dayIndex) => (
+            {isMobile ? (
               <Card
-                key={dayIndex}
                 classInfo={
                   classData.classes[
                     Math.floor(Math.random() * classData.classes.length)
                   ]
                 }
               />
-            ))}
+            ) : (
+              weekDays.map((_, dayIndex) => (
+                <Card
+                  key={dayIndex}
+                  classInfo={
+                    classData.classes[
+                      Math.floor(Math.random() * classData.classes.length)
+                    ]
+                  }
+                />
+              ))
+            )}
           </div>
         ))}
       </div>
