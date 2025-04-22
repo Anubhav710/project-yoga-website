@@ -15,7 +15,7 @@ const CTA2 = () => {
           id="cta2-heading"
           className={`heading relative whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
         >
-          yoga <br className="sm:hidden" /> at home
+          yoga at home
         </h1>
         <div className="flex flex-col items-center justify-between gap-5">
           <h5 className="cta-2-heading font-semibold text-dark-green">

@@ -71,7 +71,7 @@
 }
 
 .heading {
-  font-size: clamp(60px, 9vw, 180px);
+  font-size: clamp(30px, 9vw, 180px);
 }
 
 .common-margin {

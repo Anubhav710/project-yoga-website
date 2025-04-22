@@ -136,7 +136,7 @@ const WhatWeOffer: React.FC = () => {
             id="what-we-offer-heading"
             className={`${ashtanga.className} heading uppercase text-dark-green relative left-full w-max`}
           >
-            What <br className="sm:hidden" /> We Offer
+            What We Offer
           </h1>
         </div>
         <div className="flex flex-col bg-white">

@@ -15,11 +15,10 @@ export const useAnimateTextFromRightToLeft = (
   useGSAP(() => {
     ScrollTrigger.create({
       trigger: trigger,
-      start: "top 90%",
+      start: "top 80%",
       end: "bottom center",
       animation: gsap.to(target, {
-        left: "50%",
-        translateX: "-50%",
+        left: 0,
       }),
       scrub: 3,
     });
