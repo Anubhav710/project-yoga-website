@@ -13,13 +13,12 @@ import BenefitsYogas from "./components/BenefitsYogas";
 const aboutUs = () => {
   return (
     <div>
-      <CommonHero text="Our Studio" className="aspect-[16/6]">
+      <CommonHero text="Our Studio">
         <Image
           src={"/about-banner.jpg"}
           alt="hero-image"
-          width={2100}
-          height={2100}
-          className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
         />
       </CommonHero>
       <About />

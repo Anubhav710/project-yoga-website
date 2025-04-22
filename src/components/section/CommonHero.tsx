@@ -44,8 +44,8 @@ const CommonHero = ({
   return (
     <section id="common-heading">
       <div className="w-full mt-16">
-        <div className={`relative banner-height w-full ${className}`}>
-          <div className="h-full">{children}</div>
+        <div className={`relative  w-full ${className}`}>
+          <div className="w-full">{children}</div>
           <div className="absolute -top-8">
             <h1
               id="common-heading-txt"
