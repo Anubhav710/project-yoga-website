@@ -91,7 +91,9 @@ const Testimonials: React.FC = () => {
 
   useAnimateTextFromRightToLeft(
     "#testimonials-heading-cnt",
-    "#textimonials-heading"
+    "#textimonials-heading",
+    "50%",
+    "-50%"
   );
 
   return (

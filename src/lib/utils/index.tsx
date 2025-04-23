@@ -10,7 +10,9 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 export const useAnimateTextFromRightToLeft = (
   trigger: string,
-  target: string
+  target: string,
+  left?: string,
+  tLeft?: string
 ) => {
   useGSAP(() => {
     ScrollTrigger.create({
@@ -18,7 +20,8 @@ export const useAnimateTextFromRightToLeft = (
       start: "top 80%",
       end: "bottom center",
       animation: gsap.to(target, {
-        left: 0,
+        left: left || 0,
+        translateX: tLeft,
       }),
       scrub: 3,
     });

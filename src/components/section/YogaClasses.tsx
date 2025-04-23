@@ -44,7 +44,10 @@ const YogaClassCard: React.FC<YogaClassCardProps> = ({ yogaClass }) => {
             <p key={index}>{timeSlot.days.join(" and ")}</p>
           ))}
         </div>
-        <a href="/book-class">
+        <a
+          href="/book-class"
+          className="transition-transform duration-300 hover:translate-x-1"
+        >
           <Arrow />
         </a>
       </div>
@@ -59,9 +62,9 @@ const YogaClass: React.FC = () => {
         {/* Header section  */}
         <div className="border-b border-dark-green/30 ">
           <div className="md:flex font-semibold pb-2 hidden ">
-            <h1 className="uppercase flex-1">class</h1>
-            <h1 className="uppercase flex-1">time</h1>
-            <h1 className="uppercase flex-1">day</h1>
+            <h1 className="uppercase text-dark-green text-3xl flex-1">class</h1>
+            <h1 className="uppercase text-dark-green text-3xl flex-1">time</h1>
+            <h1 className="uppercase text-dark-green text-3xl flex-1">day</h1>
           </div>
         </div>
         <div>
