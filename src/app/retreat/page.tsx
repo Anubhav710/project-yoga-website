@@ -10,7 +10,7 @@ const page = () => {
     <section>
       <CommonHero text="Retreats" className="aspect-[16/7]">
         <Image
-          src={"/assets/images/retreat/hadder-banner.jpg"}
+          src={"/assets/images/retreat/h-banner.jpg"}
           alt="retreathero-image"
           width={2100}
           height={2100}

@@ -46,12 +46,7 @@ const Header = () => {
     <header className="sm:py-7 py-4  desktopmd:px-14 px-5  relative">
       <div className="flex items-center gap-1 justify-between">
         <Link href={"/"}>
-          <Image
-            src={"/assets/images/logo.jpg"}
-            alt="logo"
-            width={100}
-            height={100}
-          />
+          <Image src={"/logo.jpg"} alt="logo" width={100} height={100} />
         </Link>
         <nav className="space-x-16 desktop:space-x-7  text-dark-green md:flex hidden">
           {navItems.slice(0, 6).map((item) => (

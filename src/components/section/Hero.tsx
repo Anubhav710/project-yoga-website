@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 const Hero = () => {
   useGSAP(() => {
-  const mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
     mm.add("(min-width: 319px) and (max-width: 768px)", () => {
       gsap.to("#hero-title", {
         left: 0,
@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-0 md:bottom-40 right-0 z-10 hero-image-size">
           <Image
-            src={"/assets/images/home-1.png"}
+            src={"/assets/images/home/home-1.png"}
             alt="hero"
             fill
             sizes="100%"
