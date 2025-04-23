@@ -1,41 +1,17 @@
 export const yogaClasses = [
   {
-    name: "vinyasa yoga",
-    image: "/images/h1-event-img-3.jpg",
-    instructor: "Sophie",
+    name: "Regular Class",
+    image: "/assets/images/home/author3.png",
+    instructor: "Anushka",
     times: [
-      { time: "09:00am - 10:00am", days: ["Mondays", "Wednesdays"] },
-      { time: "18:00pm - 19:00pm", days: ["Tuesdays", "Thursdays"] },
+      { time: "7:15AM To 8:45AM", days: ["Monday", "Wednesdays", "Friday"] },
     ],
   },
   {
-    name: "Ashtanga yoga",
-    instructor: "Jenna",
-    image: "/images/h1-event-img-2.jpg",
-    times: [
-      { time: "09:00am - 10:00am", days: ["Mondays", "Wednesdays"] },
-      { time: "10:00am - 11:00am", days: ["Tuesdays", "Thursdays"] },
-      { time: "18:00pm - 19:00pm", days: ["Mondays", "Wednesdays"] },
-      { time: "19:00pm - 20:00pm", days: ["Tuesdays", "Thursdays"] },
-    ],
-  },
-  {
-    name: "prenatal yoga",
-    instructor: "Anna",
-    image: "/images/h1-event-img-4.jpg",
-    times: [
-      { time: "09:00am - 10:00am", days: ["Mondays", "Wednesdays"] },
-      { time: "10:00am - 11:00am", days: ["Saturdays", "Sundays"] },
-    ],
-  },
-  {
-    name: "hatha yoga",
-    instructor: "Esme",
-    image: "/images/h1-event-img-2.jpg",
-    times: [
-      { time: "09:00am - 10:00am", days: ["Mondays", "Wednesdays"] },
-      { time: "10:00am - 11:00am", days: ["Saturdays", "Sundays"] },
-    ],
+    name: "Advanced Class ",
+    instructor: "Anushka",
+    image: "/assets/images/home/author3.png",
+    times: [{ time: "7:15AM To 8:45AM", days: ["Tuesday"] }],
   },
 ];
 

@@ -54,24 +54,24 @@ const Info = () => {
   return (
     <section
       id="infoSection"
-      className={`${ashtanga.className} text-dark-green info-height desktop:h-[100vh] 99  overflow-hidden common-margin   w-full   `}
+      className={`${ashtanga.className} text-dark-green h-max overflow-hidden common-margin   w-full   `}
     >
       <div className="h-full w-full relative ">
         <h1
           ref={firstText}
-          className="heading absolute uppercase right-0 left-full whitespace-nowrap "
+          className="heading relative uppercase right-0 left-full whitespace-nowrap "
         >
           ROOTS OF YOGA
         </h1>
         <h1
           ref={secoundText}
-          className="heading uppercase absolute  md:top-[9rem] top-[4rem] right-[100%]  whitespace-nowrap"
+          className="heading uppercase relative right-[100%]  whitespace-nowrap"
         >
           BRANCHES OF WELLNESS
         </h1>
         <h1
           ref={thirdText}
-          className="heading absolute uppercase md:top-[18rem] top-[8.5rem] left-full  whitespace-nowrap"
+          className="heading relative uppercase  left-full  whitespace-nowrap"
         >
           LEAVES OF SERENITY
         </h1>

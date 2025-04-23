@@ -6,16 +6,16 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
 const images = [
-  "/fimage_cleanup.png",
-  "/abouts-2.png",
-  "/fimage_cleanup.png",
-  "/abouts-2.png",
-  "/fimage_cleanup.png",
-  "/abouts-2.png",
-  "/fimage_cleanup.png",
-  "/abouts-2.png",
-  "/fimage_cleanup.png",
-  "/abouts-2.png",
+  "/assets/images/bottom-slider-gallery/1.png",
+  "/assets/images/bottom-slider-gallery/2.png",
+  "/assets/images/bottom-slider-gallery/3.png",
+  "/assets/images/bottom-slider-gallery/4.png",
+  "/assets/images/bottom-slider-gallery/5.png",
+  "/assets/images/bottom-slider-gallery/6.png",
+  "/assets/images/bottom-slider-gallery/7.png",
+  "/assets/images/bottom-slider-gallery/8.png",
+  "/assets/images/bottom-slider-gallery/9.png",
+  "/assets/images/bottom-slider-gallery/10.png",
 ];
 
 const Slider = () => {
@@ -35,6 +35,7 @@ const Slider = () => {
         delay: 1500,
         disableOnInteraction: false,
       }}
+      loop={true}
       modules={[Autoplay]}
       className="h-[40vh] common-margin "
     >

@@ -8,7 +8,7 @@ const Team = () => {
         <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row  gap-4 sm:gap-0">
           <div className="flex-1">
             <Image
-              src={"/home-4.png"}
+              src={"/assets/images/home/author1.jpg"}
               alt="h1-blog-list-img-new-image"
               width={450}
               height={300}
@@ -72,7 +72,7 @@ const Team = () => {
           </div>
           <div className="flex-1">
             <Image
-              src={"/home-5.png"}
+              src={"/assets/images/home/author2.jpg"}
               alt="h1-blog-list-img-new-image"
               width={450}
               height={300}

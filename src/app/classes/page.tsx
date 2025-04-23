@@ -8,7 +8,7 @@ const classes = () => {
     <main>
       <CommonHero text="classes" className="aspect-[16/6]">
         <Image
-          src={"/assets/images/banner.JPG"}
+          src={"/assets/images/classes/banner.jpg"}
           alt="hero-image"
           width={2100}
           height={2100}

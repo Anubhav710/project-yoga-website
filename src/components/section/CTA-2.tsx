@@ -21,9 +21,12 @@ const CTA2 = () => {
           <h5 className="cta-2-heading font-semibold text-dark-green">
             Collection of all classes for self-practice at home.
           </h5>
-          <button className="bg-dark-green whitespace-nowrap text-white hover:bg-white hover:border hover:border-dark-green hover:text-dark-green duration-500 transition-all md:px-10 px-5 rounded-tl-[15px] rounded-br-[15px] py-3">
+          <a
+            href="/book-class"
+            className="bg-dark-green whitespace-nowrap text-white hover:bg-white hover:border hover:border-dark-green hover:text-dark-green duration-500 transition-all md:px-10 px-5 rounded-tl-[15px] rounded-br-[15px] py-3"
+          >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
       <div className="absolute -top-36 -left-4 hidden z-50 md:block">

@@ -23,7 +23,7 @@ const BenefitsYoga = () => {
         <div className="flex-1 md:flex-[1.5]">
           <div>
             <Image
-              src={"/abouts-2.png"}
+              src={"/assets/images/about/author-2.jpg"}
               alt=""
               width={520}
               height={120}

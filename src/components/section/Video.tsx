@@ -11,7 +11,7 @@ const TravelVideo = () => {
       <div className="max-w-screen-lg h-full flex flex-col items-center  mx-auto relative ">
         <div className=" relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 ">
           <Image
-            src={"/assets/images/home-3.png"}
+            src={"/assets/images/retreat/b-banner.png"}
             alt="retreat-video-img-1.jpg"
             width={1000}
             height={800}

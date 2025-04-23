@@ -27,7 +27,7 @@ const YogaClassCard: React.FC<YogaClassCardProps> = ({ yogaClass }) => {
           {yogaClass.name}
         </h1>
         <div className="flex gap-5 items-center">
-          <div className="h-10 w-10 relative rounded-full">
+          <div className="h-10 w-10 relative rounded-full overflow-hidden">
             <Image src={yogaClass.image} alt={yogaClass.name} fill />
           </div>
           <p>{yogaClass.instructor}</p>
@@ -44,8 +44,9 @@ const YogaClassCard: React.FC<YogaClassCardProps> = ({ yogaClass }) => {
             <p key={index}>{timeSlot.days.join(" and ")}</p>
           ))}
         </div>
-
-        <Arrow />
+        <a href="/book-class">
+          <Arrow />
+        </a>
       </div>
     </div>
   );

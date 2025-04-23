@@ -6,6 +6,14 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
+const img = [
+  "/assets/images/retreat/slider/1.jpg",
+  "/assets/images/retreat/slider/2.jpg",
+  "/assets/images/retreat/slider/3.jpg",
+  "/assets/images/retreat/slider/4.jpg",
+  "/assets/images/retreat/slider/5.jpg",
+];
+
 const About = () => {
   return (
     <section className="common-padding">
@@ -46,14 +54,15 @@ const About = () => {
             delay: 1500,
             disableOnInteraction: false,
           }}
+          loop={true}
           modules={[Autoplay]}
         >
-          {[1, 2, 3, 4, 5, 6].map((_, index) => (
+          {img.map((img, index) => (
             <SwiperSlide key={index}>
               <div
                 className={`pl-36 relative ${index % 2 === 0 ? "mt-32" : ""}`}
               >
-                <ImageCard />
+                <ImageCard img={img} />
               </div>
             </SwiperSlide>
           ))}
@@ -65,24 +74,19 @@ const About = () => {
 
 export default About;
 
-const ImageCard = () => {
+const ImageCard = ({ img }: { img: string }) => {
   return (
     <div className="flex w-full">
       <div className="w-full">
         <div className="relative aspect-[9/16] w-full">
-          <div className="absolute -left-[120px] sm:-left-[180px] top-1/2 -translate-y-1/2 -rotate-90">
+          {/* <div className="absolute -left-[120px] sm:-left-[180px] top-1/2 -translate-y-1/2 -rotate-90">
             <h1
               className={`text-dark-green  font-bold retreatSliderHeading ${ashtanga.className}`}
             >
               Ambala Cant
             </h1>
-          </div>
-          <Image
-            src={"/fimage_cleanup.png"}
-            alt="images"
-            fill
-            className="object-cover"
-          />
+          </div> */}
+          <Image src={img} alt="images" fill className="object-cover" />
         </div>
       </div>
     </div>

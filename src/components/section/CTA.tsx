@@ -9,9 +9,9 @@ const CTA = () => {
   return (
     <section
       id="cta-main-elemt"
-      className=" max-w-screen-xl mx-auto relative  md:mt-40 mt-2  common-padding"
+      className=" max-w-screen-xl mx-auto relative  common-padding"
     >
-      <div id="cta-main" className={`relative z-40 `}>
+      <div id="cta-main" className={`relative z-40 md:mt-32 max-md:mt-16`}>
         <h1
           id="cta-heading"
           className={`${ashtanga.className} heading relative whitespace-nowrap  left-full  uppercase text-dark-green`}

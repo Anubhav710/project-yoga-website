@@ -8,7 +8,7 @@ const BookClass = () => {
     <main>
       <CommonHero text="Book Class">
         <Image
-          src={"/assets/images/banner.JPG"}
+          src={"/assets/images/book-class/banner.jpg"}
           alt="hero-image"
           width={2100}
           height={2100}

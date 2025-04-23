@@ -15,7 +15,7 @@ const ImageSection = () => {
       </div>
       <div className="w-[60%] md:w-[50%] self-end">
         <Image
-          src={"/assets/images/home-2.png"}
+          src={"/assets/images/home/author3.png"}
           width={800}
           height={700}
           alt="image"

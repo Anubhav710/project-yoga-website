@@ -5,7 +5,11 @@ import "swiper/swiper-bundle.css";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 
-const images = ["/abouts-2.png", "/home-5.png", "/abouts-2.png"];
+const images = [
+  "/assets/images/about/author-1.jpg",
+  "/assets/images/about/author-3.jpg",
+  "/assets/images/about/author-4.jpg",
+];
 
 const Slider = () => {
   return (
@@ -24,6 +28,7 @@ const Slider = () => {
         delay: 1500,
         disableOnInteraction: false,
       }}
+      loop={true}
       modules={[Autoplay]}
       className="h-[60vh] common-margin"
     >

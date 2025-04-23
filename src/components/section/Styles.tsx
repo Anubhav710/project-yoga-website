@@ -12,7 +12,7 @@ const YogaStyles = ({ data, hide }: { data: YogaStyle[]; hide?: boolean }) => {
   return (
     <section className=" relative  common-padding">
       <div className="max-w-screen-lg mx-auto">
-        <div className="grid md:grid-cols-4 grid-cols-1 w-max mx-auto">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 w-max mx-auto z-30">
           {data.map((item) => (
             <YogaStylesCard
               key={item.title}
@@ -52,7 +52,7 @@ const YogaStylesCard = ({
 }) => {
   return (
     <div
-      className={`w-max pt-10 flex flex-col items-center gap-4 ${ashtanga2.className}`}
+      className={`w-max pt-10 flex flex-col items-center gap-4 relative z-20 ${ashtanga2.className}`}
     >
       <div>{image}</div>
       <h1

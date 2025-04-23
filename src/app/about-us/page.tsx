@@ -15,7 +15,7 @@ const aboutUs = () => {
     <div>
       <CommonHero text="Our Studio">
         <Image
-          src={"/about-banner.jpg"}
+          src={"/assets/images/about/about-banner.jpg"}
           alt="hero-image"
           width={1920}
           height={1080}
