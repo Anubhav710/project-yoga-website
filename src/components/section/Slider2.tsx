@@ -26,6 +26,18 @@ const Slider = () => {
           spaceBetween: 2,
           slidesPerView: 1,
         },
+        640: {
+          spaceBetween: 10,
+          slidesPerView: 2,
+        },
+        768: {
+          spaceBetween: 15,
+          slidesPerView: 3,
+        },
+        1024: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
         1200: {
           spaceBetween: 22,
           slidesPerView: 5,
