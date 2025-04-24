@@ -48,7 +48,7 @@ const Header = () => {
         <Link href={"/"}>
           <Image src={"/logo.jpg"} alt="logo" width={115} height={100} />
         </Link>
-        <nav className="space-x-16 desktop:space-x-7  text-dark-green md:flex hidden">
+        <nav className="lg:space-x-10 md:space-x-6  text-dark-green md:flex hidden">
           {navItems.slice(0, 6).map((item) => (
             <Links
               href={item.href}

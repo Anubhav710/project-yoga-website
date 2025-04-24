@@ -4,7 +4,7 @@ import React from "react";
 const Team = () => {
   return (
     <section className="padding-x">
-      <div className="space-y-10 sm:space-y-0">
+      <div className="space-y-10 md:space-y-0">
         <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row  gap-4 sm:gap-0">
           <div className="flex-1">
             <Image
