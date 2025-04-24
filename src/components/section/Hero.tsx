@@ -44,14 +44,14 @@ const Hero = () => {
         >
           <h1
             id="hero-title"
-            className="header-txt relative -left-56 opacity-0 leading-[0.9] uppercase sm:pl-3 md:pl-48     "
+            className="header-txt relative -left-56 opacity-0 leading-[0.9] desktoplg:text-7xl uppercase sm:pl-3 md:pl-48     "
           >
             Yoga Studio by
           </h1>
 
           <h1
             id="hero-title-2"
-            className="header-txt relative left-64 leading-[1.2] uppercase md:pl-24 sm:pl-6 opacity-0 "
+            className="header-txt relative left-64 leading-[1.2] desktoplg:text-7xl uppercase md:pl-24 sm:pl-6 opacity-0 "
           >
             Preeti & Anushka
           </h1>

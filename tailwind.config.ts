@@ -18,6 +18,7 @@ export default {
       screens: {
         desktop: { min: "768px", max: "992px" },
         desktopmd: { min: "992px" },
+        desktoplg: { min: "769", max: "826" },
       },
     },
   },

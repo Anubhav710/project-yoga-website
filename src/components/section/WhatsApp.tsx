@@ -22,7 +22,7 @@ export default function WhatsApp() {
 
   return (
     <Link
-      href="https://wa.me/1234567890" // Replace with client's WhatsApp number
+      href="https://wa.me/9312641005" // Replace with client's WhatsApp number
       target="_blank"
       rel="noopener noreferrer"
       className={`fixed bottom-24 overflow-clip  sm:right-14 desktop:right-5 right-4  p-3 bg-green-500 rounded-full shadow-lg transition-all duration-300 ease-in-out z-50 ${
