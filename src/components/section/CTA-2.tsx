@@ -7,13 +7,13 @@ import { useAnimateTextFromRightToLeft } from "@/lib/utils";
 import Slider2 from "./Slider2";
 
 const CTA2 = () => {
-  useAnimateTextFromRightToLeft("#cta2-main", "#cta2-heading");
+  useAnimateTextFromRightToLeft("#cta2-main", "#cta2-heading", "50%", "-50%");
   return (
     <section className=" relative  padding-x">
       <div id="cta2-main" className="max-w-screen-lg mx-auto space-y-5">
         <h1
           id="cta2-heading"
-          className={`heading relative z-[90] whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
+          className={`heading relative z-[90]  w-max left-full text-dark-green ${ashtanga.className} uppercase`}
         >
           yoga at home
         </h1>

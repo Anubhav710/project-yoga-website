@@ -24,7 +24,7 @@ const YogaStyles = ({ data, hide }: { data: YogaStyle[]; hide?: boolean }) => {
         </div>
       </div>
       <div
-        className={`absolute bottom-0 right-0 z-10   ${
+        className={`absolute lg:-bottom-72  right-0 z-10   ${
           hide ? "hidden" : "md:block hidden"
         } `}
       >
