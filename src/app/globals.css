@@ -10,6 +10,14 @@
   width: clamp(420px, 55vw, 1350px);
 }
 
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.common-gap {
+  @apply space-y-20 px-4 md:px-6 lg:px-8;
+}
+
 .header-txt-2 {
   font-size: clamp(76px, 10vw, 200px);
 }
@@ -74,20 +82,6 @@
   font-size: clamp(30px, 9vw, 180px);
 }
 
-.common-margin {
-  @apply sm:mt-32 mt-16;
-}
-.common-margin-bottom {
-  @apply sm:mt-32 mt-16;
-}
-.common-padding {
-  @apply sm:pt-32 pt-16 px-3 sm:px-5;
-}
-
-.common-padding-bottom {
-  @apply sm:pb-32 pb-16;
-}
-
 .retreatSliderHeading {
   font-size: clamp(36px, 3vw, 60px);
 }
@@ -121,4 +115,8 @@
 
 .banner-height {
   height: clamp(240px, 40vw, 780px);
+}
+
+.padding-x {
+  @apply md:px-5 px-2;
 }

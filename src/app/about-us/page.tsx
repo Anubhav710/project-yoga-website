@@ -21,6 +21,7 @@ const aboutUs = () => {
           height={1080}
         />
       </CommonHero>
+
       <About />
 
       <YogaStyles data={BenifitsYoga} hide />

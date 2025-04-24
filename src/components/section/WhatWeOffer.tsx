@@ -124,14 +124,14 @@ const WhatWeOffer: React.FC = () => {
   const contentRef = useRef<HTMLDivElement | null>(null);
 
   useAnimateTextFromRightToLeft(
-    "#whai-we-offer-main-2",
+    "#what-we-offer-main-2",
     "#what-we-offer-heading"
   );
 
   return (
-    <section className="common-padding">
+    <section className="padding-x">
       <div className="max-w-screen-xl mx-auto relative ">
-        <div id="whai-we-offer-main-2" className={`pb-10`}>
+        <div id="what-we-offer-main-2">
           <h1
             id="what-we-offer-heading"
             className={`${ashtanga.className} heading uppercase text-dark-green relative left-full w-max`}
@@ -164,7 +164,7 @@ const WhatWeOffer: React.FC = () => {
           {/* Content */}
           <div
             ref={contentRef}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 h-auto md:h-[80vh] mt-14"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5  mt-14"
           >
             <div className="px-5 md:px-10 py-10 md:py-20 relative">
               <div className="w-full h-full relative">

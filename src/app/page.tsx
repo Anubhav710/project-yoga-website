@@ -13,18 +13,20 @@ import { YogaStylesData } from "@/constants";
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-clip overflow-y-hidden">
+    <main className="relative overflow-x-clip overflow-y-hidden ">
       <Hero />
-      <YogaStyles data={YogaStylesData} />
-      <Team />
-      <Info />
-      <ImageSection />
-      <WhatWeOffer />
-      <CTA />
-      <YogaClass />
-      <Testimonials />
-      <TravelVideo />
-      <CTA2 />
+      <div className="space-y-24">
+        <YogaStyles data={YogaStylesData} />
+        <Team />
+        <Info />
+        <ImageSection />
+        <WhatWeOffer />
+        <CTA />
+        <YogaClass />
+        <Testimonials />
+        <TravelVideo />
+        <CTA2 />
+      </div>
     </main>
   );
 }

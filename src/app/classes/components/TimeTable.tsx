@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-const timeSlots = ["07.15 AM - 08.45 AM"];
+const timeSlots = ["07.15 AM - 08.45 AM", "07.15 AM - 08.45 AM"];
 const weekDays = [
   "Monday",
   "Tuesday",
@@ -18,13 +18,13 @@ type WeekDay = (typeof weekDays)[number];
 const classData = {
   classes: [
     {
-      name: "Regular Class",
+      name: "Ashtanga",
       instructor: "Carrie Stone",
       level: "Beginner",
       slots: "4/5",
     },
     {
-      name: "Advanced Class",
+      name: "Hatha",
       instructor: "Carrie Stone",
       level: "Advanced",
       slots: "3/5",
@@ -35,10 +35,10 @@ const classData = {
 // Define the schedule for which classes appear on which days
 const schedule: Record<WeekDay, (number | null)[]> = {
   Monday: [0, null], // Regular class for both time slots
-  Tuesday: [1, 1], // Only Advanced class for second slot
-  Wednesday: [0, 0], // Regular class for both time slots
+  Tuesday: [null, 1], // Only Advanced class for second slot
+  Wednesday: [0, null], // Regular class for both time slots
   Thursday: [null, null], // No classes
-  Friday: [0, 0], // Regular class for both time slots
+  Friday: [0, null], // Regular class for both time slots
   Saturday: [null, null], // No classes
   Sunday: [null, null], // No classes
 };
@@ -95,7 +95,7 @@ const TimeTable = () => {
           />
         </div>
         <h1 className="text-2xl py-10 md:text-4xl text-center uppercase font-semibold leading-10 text-dark-green w-full md:w-[83%] mx-auto">
-          Personal and group lessons
+          Group Classes
         </h1>
       </div>
 
@@ -174,7 +174,11 @@ const TimeTable = () => {
             key={timeSlotIndex}
             className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-8"}`}
           >
-            <div className="text-center place-content-center border-x border-b border-gray-600 text-sm md:text-base">
+            <div
+              className={`text-center place-content-center border-x border-b border-gray-600 text-sm md:text-base ${
+                timeSlotIndex % 2 === 0 ? "bg-[#F7F5F2]" : ""
+              }`}
+            >
               {timeSlot}
             </div>
             {isMobile
@@ -182,17 +186,27 @@ const TimeTable = () => {
                   const day = weekDays[currentDayIndex];
                   const classInfo = getClassForSlot(day, timeSlotIndex);
                   return classInfo ? (
-                    <Card classInfo={classInfo} />
+                    <Card
+                      classInfo={classInfo}
+                      isAlternate={timeSlotIndex % 2 === 0}
+                    />
                   ) : (
-                    <EmptyCard />
+                    <EmptyCard isAlternate={timeSlotIndex % 2 === 0} />
                   );
                 })()
               : weekDays.map((day, dayIndex) => {
                   const classInfo = getClassForSlot(day, timeSlotIndex);
                   return classInfo ? (
-                    <Card key={dayIndex} classInfo={classInfo} />
+                    <Card
+                      key={dayIndex}
+                      classInfo={classInfo}
+                      isAlternate={timeSlotIndex % 2 === 0}
+                    />
                   ) : (
-                    <EmptyCard key={dayIndex} />
+                    <EmptyCard
+                      key={dayIndex}
+                      isAlternate={timeSlotIndex % 2 === 0}
+                    />
                   );
                 })}
           </div>
@@ -211,11 +225,16 @@ interface CardProps {
     level: string;
     slots: string;
   };
+  isAlternate?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ classInfo }) => {
+export const Card: React.FC<CardProps> = ({ classInfo, isAlternate }) => {
   return (
-    <div className="space-y-2 justify-between flex flex-col gap-4 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all">
+    <div
+      className={`space-y-2 justify-between flex flex-col gap-4 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all ${
+        isAlternate ? "bg-[#F7F5F2]" : ""
+      }`}
+    >
       <div className="bg-dark-green w-full flex justify-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all">
         <h1 className="text-sm md:text-base">{classInfo.level}</h1>
         <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
@@ -239,10 +258,18 @@ export const Card: React.FC<CardProps> = ({ classInfo }) => {
 };
 
 // Component for empty slots
-export const EmptyCard: React.FC = () => {
+interface EmptyCardProps {
+  isAlternate?: boolean;
+}
+
+export const EmptyCard: React.FC<EmptyCardProps> = ({ isAlternate }) => {
   return (
-    <div className="border-r border-b border-gray-600 py-8 md:py-12 flex items-center justify-center">
-      <p className="text-center text-gray-400 text-lg">No Class</p>
+    <div
+      className={`border-r border-b border-gray-600 py-8 md:py-12 flex items-center justify-center ${
+        isAlternate ? "bg-[#F7F5F2]" : ""
+      }`}
+    >
+      <p className="text-center text-gray-400 text-lg"></p>
     </div>
   );
 };

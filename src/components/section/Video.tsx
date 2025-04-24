@@ -6,9 +6,9 @@ import Arrow from "../ui/Arrow";
 const TravelVideo = () => {
   return (
     <section
-      className={` relative w-full  h-[70vh]  bg-[url('/images/retreat-bcgr-img-1.jpg')] bg-cover bg-no-repeat px-2 `}
+      className={` relative w-full  md:h-[100vh] h-[60vh]  bg-[url('/images/retreat-bcgr-img-1.jpg')] bg-cover bg-no-repeat`}
     >
-      <div className="max-w-screen-lg 2xl:max-w-screen-2xl h-full  flex flex-col items-center  mx-auto relative ">
+      <div className="max-w-screen-lg 2xl:max-w-screen-2xl h-full  flex flex-col items-center  mx-auto relative  padding-x ">
         {/* Image container */}
         <div className="h-[60%] w-full  my-auto relative">
           <Image

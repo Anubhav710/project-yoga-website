@@ -4,11 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 
 // Class options data
 const classOptions = [
-  { value: "yoga", label: "Yoga Class" },
-  { value: "pilates", label: "Pilates Class" },
-  { value: "meditation", label: "Meditation Class" },
-  { value: "dance", label: "Dance Class" },
-  { value: "strength", label: "Strength Training Class" },
+  { value: "Regular Classes", label: "Regular Class" },
+  { value: "Advanced Classes", label: "Advanced Class" },
 ];
 
 const BookClassForm = () => {

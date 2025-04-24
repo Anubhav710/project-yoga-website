@@ -9,11 +9,11 @@ import Slider2 from "./Slider2";
 const CTA2 = () => {
   useAnimateTextFromRightToLeft("#cta2-main", "#cta2-heading");
   return (
-    <section className=" relative common-padding z-50 common-padding-bottom">
+    <section className=" relative  padding-x">
       <div id="cta2-main" className="max-w-screen-lg mx-auto space-y-5">
         <h1
           id="cta2-heading"
-          className={`heading relative whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
+          className={`heading relative z-[99] whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
         >
           yoga at home
         </h1>

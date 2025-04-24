@@ -1,9 +1,20 @@
 import { ashtanga } from "@/app/fonts";
 import React from "react";
+import CustomButton from "../ui/Button";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Instagram,
+  Facebook,
+  Youtube,
+  Mail as MailIcon,
+  MessageSquare,
+} from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[url('/images/green-noise-1920x1200-1.jpg')] bg-cover common-padding pb-12 overflow-x-clip overflow-y-visible">
+    <footer className="bg-[url('/images/green-noise-1920x1200-1.jpg')] padding-x bg-cover common-padding pb-12 pt-24 mt-16 overflow-x-clip overflow-y-visible">
       <div>
         <div className="w-full flex flex-col md:flex-row justify-between pb-8">
           <div className="w-full md:w-1/2 space-y-3 mb-5 md:mb-0">
@@ -14,9 +25,9 @@ const Footer = () => {
                 placeholder="Your e-mail"
                 className="bg-transparent text-white outline-none placeholder:text-white w-full py-2 flex-1"
               />
-              <button className="text-white px-4 py-2 hover:bg-white/10 transition-colors">
+              <CustomButton className={"ring-[1px] mb-1 ring-white"}>
                 Submit
-              </button>
+              </CustomButton>
             </div>
           </div>
           <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-10 md:gap-16 ml-5">
@@ -39,7 +50,7 @@ const Footer = () => {
                     ))}
                   {index === 1 &&
                     [
-                      { name: "Regular Classes", path: "/classes" },
+                      { name: "Regular Class", path: "/classes" },
                       { name: "Advanced Class", path: "/classes" },
                     ].map((item, idx) => (
                       <li key={idx}>
@@ -50,14 +61,30 @@ const Footer = () => {
                     [
                       {
                         name: "Ground floor, Yoga/ Preeti & Anushka, Asiad Community Centre, P.A, near Minerals Cafe, Asian Games Village Complex, Siri Fort, New Delhi, Delhi 110049",
+                        icon: <MapPin size={16} className="shrink-0 mt-1" />,
                       },
-                      { name: "+91-9312641005", path: "tel:+91-9312641005" },
+                      {
+                        name: "+91-9312641005",
+                        path: "tel:+91-9312641005",
+                        icon: <Phone size={16} className="shrink-0" />,
+                      },
+                      {
+                        name: "payoga.info@gmail.com",
+                        path: "mailto:payoga.info@gmail.com",
+                        icon: <Mail size={16} className="shrink-0" />,
+                      },
                     ].map((item, idx) => (
                       <li
                         key={idx}
                         className={idx === 0 ? "max-w-[250px] text-sm" : ""}
                       >
-                        <a href={item.path}>{item.name}</a>
+                        <a
+                          href={item.path}
+                          className="flex  gap-2 items-center"
+                        >
+                          {item.icon}
+                          <span>{item.name}</span>
+                        </a>
                       </li>
                     ))}
                 </ul>
@@ -78,7 +105,7 @@ const Footer = () => {
                   href="https://www.instagram.com/preeti.anushka.yoga/"
                   target="_blank"
                 >
-                  IG
+                  <Instagram size={16} />
                 </a>
               </div>
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
@@ -86,7 +113,7 @@ const Footer = () => {
                   href="https://www.facebook.com/yogawithpreetiandanushka/"
                   target="_blank"
                 >
-                  FB
+                  <Facebook size={16} />
                 </a>
               </div>
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
@@ -94,17 +121,17 @@ const Footer = () => {
                   href="https://www.youtube.com/channel/UC9vtC10i4GBiCh8uZYoihvg"
                   target="_blank"
                 >
-                  YT
+                  <Youtube size={16} />
                 </a>
               </div>
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
                 <a href="mailto:payoga.info@gmail.com" target="_blank">
-                  EM
+                  <MailIcon size={16} />
                 </a>
               </div>
               <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
                 <a href="https://wa.me/+918447148364" target="_blank">
-                  WA
+                  <MessageSquare size={16} />
                 </a>
               </div>
             </div>

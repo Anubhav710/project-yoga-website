@@ -97,10 +97,7 @@ const Testimonials: React.FC = () => {
   );
 
   return (
-    <section
-      id="testimonials-section"
-      className="common-padding common-padding-bottom "
-    >
+    <section id="testimonials-section" className="padding-x ">
       <div className="max-w-screen-xl   mx-auto    ">
         <div id="testimonials-heading-cnt">
           <h1
