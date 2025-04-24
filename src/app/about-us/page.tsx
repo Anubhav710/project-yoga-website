@@ -19,6 +19,7 @@ const aboutUs = () => {
           alt="hero-image"
           width={1920}
           height={1080}
+          className="w-full h-full object-cover"
         />
       </CommonHero>
 

@@ -42,22 +42,26 @@ const CommonHero = ({
     // });
   }, []);
   return (
-    <section id="common-heading">
-      <div className="w-full mt-16">
-        <div className={`relative  w-full ${className}`}>
-          <div className="w-full">{children}</div>
-          <div className="absolute -top-8">
-            <h1
-              id="common-heading-txt"
-              className={`uppercase header-txt opacity-0 relative left-full leading-[62px] ${ashtanga.className} text-dark-green`}
-            >
-              {text}
-            </h1>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section
+      id="common-heading"
+      className="h-[100dvh] bg-cover bg-center"
+      style={{
+        backgroundImage: "url('/assets/images/about/about-banner.jpg')",
+      }}
+    ></section>
   );
 };
 
 export default CommonHero;
+
+// <div className={`relative  w-full ${className}`}>
+//   <div className="w-full">{children}</div>
+//   <div className="absolute -top-8">
+//     <h1
+//       id="common-heading-txt"
+//       className={`uppercase header-txt opacity-0 relative left-full leading-[62px] ${ashtanga.className} text-dark-green`}
+//     >
+//       {text}
+//     </h1>
+//   </div>
+// </div>;
