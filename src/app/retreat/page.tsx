@@ -7,7 +7,7 @@ import Slider2 from "@/components/section/Slider2";
 
 const page = () => {
   return (
-    <section>
+    <section className="space-y-24">
       <CommonHero text="Retreats" className="aspect-[16/7]">
         <Image
           src={"/assets/images/retreat/h-banner.jpg"}
@@ -18,11 +18,8 @@ const page = () => {
         />
       </CommonHero>
       <About />
-      <div className="h-32 w-full "></div>
       <TravelVideo />
-      <div className="h-8 w-full "></div>
       <Slider2 />
-      <div className="h-32 w-full bg-transparent"></div>
     </section>
   );
 };

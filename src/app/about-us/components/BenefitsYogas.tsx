@@ -3,12 +3,12 @@ import React from "react";
 
 const BenefitsYogas = () => {
   return (
-    <section className="bg-dark-green common-margin py-20">
+    <section className="bg-dark-green padding-x py-20">
       <div className="grid lg:grid-cols-2 grid-cols-1">
         <div className="relative flex justify-center bg-[url('/image.png')] bg-contain bg-no-repeat bg-center">
           <div className=" w-[80%]">
             <Image
-              src={"/about-img.png"}
+              src={"/assets/images/about/about.png"}
               alt=""
               width={389}
               height={329}
@@ -16,7 +16,7 @@ const BenefitsYogas = () => {
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col justify-center p-5">
+        <div className="flex-1 flex flex-col justify-center">
           <div>
             <h2 className="text-3xl md:text-4xl text-white font-semibold">
               From Mat to Magic:

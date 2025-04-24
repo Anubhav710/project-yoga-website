@@ -38,16 +38,28 @@ const About = () => {
           scenery, and forge unforgettable bonds with like-minded yogis.
         </h1>
       </div>
-      <div className="max-w-screen-2xl mx-auto  h-auto common-margin ">
+      <div className="max-w-screen-2xl mx-auto  mt-24">
         <Swiper
           breakpoints={{
             310: {
-              spaceBetween: 20,
+              spaceBetween: 2,
               slidesPerView: 1,
             },
-            1200: {
-              spaceBetween: 20,
+            640: {
+              spaceBetween: 10,
+              slidesPerView: 2,
+            },
+            768: {
+              spaceBetween: 15,
               slidesPerView: 3,
+            },
+            1024: {
+              spaceBetween: 20,
+              slidesPerView: 4,
+            },
+            1200: {
+              spaceBetween: 22,
+              slidesPerView: 5,
             },
           }}
           autoplay={{
@@ -56,6 +68,7 @@ const About = () => {
           }}
           loop={true}
           modules={[Autoplay]}
+          className="bg-red-300"
         >
           {img.map((img, index) => (
             <SwiperSlide key={index}>

@@ -11,6 +11,7 @@ import {
   Mail as MailIcon,
   MessageSquare,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -100,38 +101,49 @@ const Footer = () => {
           </h1>
           <div className="flex items-center gap-3 flex-wrap ">
             <div className="flex gap-4 text-white">
-              <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full cursor-pointer bg-white/30 flex items-center justify-center hover:bg-white/50 transition-all duration-300 transform hover:scale-110">
                 <a
                   href="https://www.instagram.com/preeti.anushka.yoga/"
                   target="_blank"
+                  className="hover:text-gray-200 transition-colors"
                 >
                   <Instagram size={16} />
                 </a>
               </div>
-              <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full cursor-pointer bg-white/30 flex items-center justify-center hover:bg-white/50 transition-all duration-300 transform hover:scale-110">
                 <a
                   href="https://www.facebook.com/yogawithpreetiandanushka/"
                   target="_blank"
+                  className="hover:text-gray-200 transition-colors"
                 >
                   <Facebook size={16} />
                 </a>
               </div>
-              <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full cursor-pointer bg-white/30 flex items-center justify-center hover:bg-white/50 transition-all duration-300 transform hover:scale-110">
                 <a
                   href="https://www.youtube.com/channel/UC9vtC10i4GBiCh8uZYoihvg"
                   target="_blank"
+                  className="hover:text-gray-200 transition-colors"
                 >
                   <Youtube size={16} />
                 </a>
               </div>
-              <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
-                <a href="mailto:payoga.info@gmail.com" target="_blank">
+              <div className="h-8 w-8 rounded-full cursor-pointer bg-white/30 flex items-center justify-center hover:bg-white/50 transition-all duration-300 transform hover:scale-110">
+                <a
+                  href="mailto:payoga.info@gmail.com"
+                  target="_blank"
+                  className="hover:text-gray-200 transition-colors"
+                >
                   <MailIcon size={16} />
                 </a>
               </div>
-              <div className="h-8 w-8 rounded-full bg-white/30 flex items-center justify-center">
-                <a href="https://wa.me/+918447148364" target="_blank">
-                  <MessageSquare size={16} />
+              <div className="h-8 w-8 rounded-full cursor-pointer bg-white/30 flex items-center justify-center hover:bg-white/50 transition-all duration-300 transform hover:scale-110">
+                <a
+                  href="https://wa.me/+918447148364"
+                  target="_blank"
+                  className="hover:text-gray-200 transition-colors"
+                >
+                  <FaWhatsapp size={16} />
                 </a>
               </div>
             </div>

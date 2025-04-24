@@ -12,7 +12,7 @@ import BenefitsYogas from "./components/BenefitsYogas";
 
 const aboutUs = () => {
   return (
-    <div>
+    <div className="space-y-24">
       <CommonHero text="Our Studio">
         <Image
           src={"/assets/images/about/about-banner.jpg"}

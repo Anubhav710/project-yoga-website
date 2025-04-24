@@ -3,7 +3,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="max-w-screen-lg mx-auto ">
+    <div className="max-w-screen-lg mx-auto padding-x ">
       <div>
         <div className=" w-max mx-auto pb-5">
           <Image

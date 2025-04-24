@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
 import ScrollToTop from "@/components/section/ScrollToTop";
+import WhatsApp from "@/components/section/WhatsApp";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ScrollToTop />
+        <WhatsApp />
         <Footer />
       </body>
     </html>

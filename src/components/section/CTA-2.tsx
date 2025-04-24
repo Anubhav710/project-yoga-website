@@ -13,7 +13,7 @@ const CTA2 = () => {
       <div id="cta2-main" className="max-w-screen-lg mx-auto space-y-5">
         <h1
           id="cta2-heading"
-          className={`heading relative z-[99] whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
+          className={`heading relative z-[90] whitespace-nowrap left-[30rem] text-dark-green ${ashtanga.className} uppercase`}
         >
           yoga at home
         </h1>

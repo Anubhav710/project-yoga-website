@@ -10,7 +10,7 @@ interface YogaStyle {
 
 const YogaStyles = ({ data, hide }: { data: YogaStyle[]; hide?: boolean }) => {
   return (
-    <section className=" relative">
+    <section className=" relative padding-x">
       <div className="max-w-screen-lg mx-auto">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 w-max mx-auto z-30">
           {data.map((item) => (

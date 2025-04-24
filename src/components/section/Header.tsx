@@ -43,7 +43,7 @@ const Header = () => {
   console.log(pathname);
 
   return (
-    <header className="sm:py-3 py-4 px-3 md:px-2.5 lg:px-5   fixed top-0 z-[99] left-0 right-0 bg-white shadow-md">
+    <header className="sm:py-3 py-4 px-3 md:px-2.5 lg:px-5   relative top-0 z-[99] left-0 right-0 bg-white ">
       <div className="flex items-center gap-1 justify-between">
         <Link href={"/"}>
           <Image src={"/logo.jpg"} alt="logo" width={115} height={100} />

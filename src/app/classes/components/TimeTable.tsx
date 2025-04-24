@@ -82,7 +82,7 @@ const TimeTable = () => {
   };
 
   return (
-    <section className="max-w-[1200px] mx-auto common-padding common-padding-bottom">
+    <section className="max-w-[1200px] padding-x mx-auto common-padding common-padding-bottom">
       <div className="">
         <div className="w-max mx-auto">
           <Image

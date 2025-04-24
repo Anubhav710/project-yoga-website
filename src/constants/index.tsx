@@ -9,8 +9,8 @@ export const yogaClasses = [
   },
   {
     name: "Advanced Class ",
-    instructor: "Anushka",
-    image: "/assets/images/home/author3.png",
+    instructor: "Preeti",
+    image: "/assets/images/home/author1.jpg",
     times: [{ time: "7:15AM To 8:45AM", days: ["Tuesday"] }],
   },
 ];

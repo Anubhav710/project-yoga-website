@@ -18,16 +18,16 @@ const benefitsList = [
 
 const BenefitsYoga = () => {
   return (
-    <section className="common-padding">
+    <section className="padding-x">
       <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-11">
         <div className="flex-1 md:flex-[1.5]">
-          <div>
+          <div className=" rounded-bl-[27rem] overflow-hidden">
             <Image
-              src={"/assets/images/about/author-2.jpg"}
+              src={"/assets/images/about/auth.jpg"}
               alt=""
-              width={520}
+              width={820}
               height={120}
-              className="w-full h-full object-cover rounded-bl-[27rem]"
+              className="w-full h-full object-cover "
             />
           </div>
         </div>

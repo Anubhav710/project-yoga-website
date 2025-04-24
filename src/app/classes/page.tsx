@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const classes = () => {
   return (
-    <main>
+    <main className="space-y-24">
       <CommonHero text="classes" className="aspect-[16/6]">
         <Image
           src={"/assets/images/classes/banner.jpg"}

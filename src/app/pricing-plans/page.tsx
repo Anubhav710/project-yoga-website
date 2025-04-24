@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <div>
+    <div className="space-y-24">
       <CommonHero text="Prices" className="aspect-[16/6]">
         <Image
           src={"/assets/images/pricing/Banner.jpg"}

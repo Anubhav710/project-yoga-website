@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const contactUs = () => {
   return (
-    <section>
+    <section className="space-y-24">
       <CommonHero text="Contact Us">
         <Image
           src={"/assets/images/contact/Banner.jpg"}

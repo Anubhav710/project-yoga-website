@@ -7,6 +7,7 @@ import YogaStyles from "@/components/section/Styles";
 import Team from "@/components/section/Team";
 import Testimonials from "@/components/section/Testimonials";
 import TravelVideo from "@/components/section/Video";
+
 import WhatWeOffer from "@/components/section/WhatWeOffer";
 import YogaClass from "@/components/section/YogaClasses";
 import { YogaStylesData } from "@/constants";
