@@ -3,7 +3,7 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div>
+    <div className="padding-x">
       <div className="grid sm:grid-cols-5 grid-cols-1 gap-5">
         <div className="h-[350px] sm:col-span-1  relative ">
           <Image

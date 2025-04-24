@@ -37,7 +37,7 @@ const BookClassForm = () => {
   };
 
   return (
-    <section className="common-padding common-padding-bottom">
+    <section className="common-padding common-padding-bottom padding-x">
       <form action="" className="max-w-4xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-2">
           <label htmlFor="full-name">Full Name</label>

@@ -49,7 +49,7 @@ const Slider = () => {
       }}
       loop={true}
       modules={[Autoplay]}
-      className="h-[40vh] common-margin "
+      className="h-[40vh]  "
     >
       {images.map((image, i) => (
         <SwiperSlide key={i} className=" h-full w-full relative">

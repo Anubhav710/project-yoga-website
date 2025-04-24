@@ -23,6 +23,10 @@ const Slider = () => {
             spaceBetween: 2,
             slidesPerView: 1,
           },
+          768: {
+            spaceBetween: 10,
+            slidesPerView: 2,
+          },
           1200: {
             spaceBetween: 22,
             slidesPerView: 3,
@@ -36,18 +40,11 @@ const Slider = () => {
         modules={[Autoplay]}
         className="h-[60vh] "
       >
-        <SwiperSlide className=" h-full w-full relative">
-          <Image src={images[0]} alt="image" fill className="object-cover" />
-        </SwiperSlide>
-        <SwiperSlide className=" h-full w-full relative">
-          <Image src={images[1]} alt="image" fill className="object-cover" />
-        </SwiperSlide>
-        <SwiperSlide className=" h-full w-full relative">
-          <Image src={images[2]} alt="image" fill className="object-cover" />
-        </SwiperSlide>
-        <SwiperSlide className=" h-full w-full relative">
-          <Image src={images[1]} alt="image" fill className="object-cover" />
-        </SwiperSlide>
+        {images.map((img) => (
+          <SwiperSlide className=" h-full w-full relative">
+            <Image src={img} alt="image" fill className="object-cover" />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

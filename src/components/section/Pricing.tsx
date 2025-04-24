@@ -5,7 +5,7 @@ import { ashtanga } from "@/app/fonts";
 
 const Pricing = () => {
   return (
-    <section className="overflow-clip">
+    <section className="overflow-clip padding-x">
       <div className="max-w-screen-lg mx-auto flex gap-5 flex-col ">
         <div className="flex-1">
           <div className="space-y-2">

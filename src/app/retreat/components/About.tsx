@@ -16,7 +16,7 @@ const img = [
 
 const About = () => {
   return (
-    <section className="common-padding">
+    <section className="padding-x">
       <div className=" w-max mx-auto pb-10">
         <Image
           src={
@@ -55,11 +55,11 @@ const About = () => {
             },
             1024: {
               spaceBetween: 20,
-              slidesPerView: 4,
+              slidesPerView: 3,
             },
             1200: {
               spaceBetween: 22,
-              slidesPerView: 5,
+              slidesPerView: 3,
             },
           }}
           autoplay={{
@@ -68,7 +68,6 @@ const About = () => {
           }}
           loop={true}
           modules={[Autoplay]}
-          className="bg-red-300"
         >
           {img.map((img, index) => (
             <SwiperSlide key={index}>
