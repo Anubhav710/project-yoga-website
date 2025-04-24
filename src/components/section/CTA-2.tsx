@@ -22,7 +22,7 @@ const CTA2 = () => {
             Collection of all classes for self-practice at home.
           </h5>
           <a
-            href="/book-class"
+            href="/contact-us"
             className="bg-dark-green whitespace-nowrap text-white hover:bg-white hover:border hover:border-dark-green hover:text-dark-green duration-500 transition-all md:px-10 px-5 rounded-tl-[15px] rounded-br-[15px] py-3"
           >
             Contact Us
