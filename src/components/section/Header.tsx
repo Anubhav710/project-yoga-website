@@ -23,10 +23,10 @@ export const navItems = [
     title: "Retreats",
     href: "/retreat",
   },
-  {
-    title: "Pricing",
-    href: "/pricing-plans",
-  },
+  // {
+  //   title: "Pricing",
+  //   href: "/pricing-plans",
+  // },
 
   {
     title: "Contact",

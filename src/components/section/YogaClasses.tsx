@@ -41,7 +41,7 @@ const YogaClassCard: React.FC<YogaClassCardProps> = ({ yogaClass }) => {
       <div className="flex-1 space-y-4 flex justify-between flex-col md:flex-row ">
         <div className="space-y-2">
           {yogaClass.times.map((timeSlot, index) => (
-            <p key={index}>{timeSlot.days.join(" and ")}</p>
+            <p key={index}>{timeSlot.days.join(" , ")}</p>
           ))}
         </div>
         <a

@@ -1,16 +1,16 @@
 export const yogaClasses = [
   {
     name: "Regular Class",
-    image: "/assets/images/home/author3.png",
-    instructor: "Anushka",
+    image: "/assets/images/home/author1.jpg",
+    instructor: "Preeti",
     times: [
-      { time: "7:15AM To 8:45AM", days: ["Monday", "Wednesdays", "Friday"] },
+      { time: "7:15AM To 8:45AM", days: ["Monday", "Wednesday", "Friday"] },
     ],
   },
   {
     name: "Advanced Class ",
-    instructor: "Preeti",
-    image: "/assets/images/home/author1.jpg",
+    instructor: "Anushka",
+    image: "/assets/images/home/author3.png",
     times: [{ time: "7:15AM To 8:45AM", days: ["Tuesday"] }],
   },
 ];

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-const timeSlots = ["07.15 AM - 08.45 AM", "07.15 AM - 08.45 AM"];
+const timeSlots = ["Week 1", "Week 2", "Week 3", "Week 4"];
 const weekDays = [
   "Monday",
   "Tuesday",
@@ -10,7 +10,6 @@ const weekDays = [
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ] as const;
 
 type WeekDay = (typeof weekDays)[number];
@@ -18,29 +17,88 @@ type WeekDay = (typeof weekDays)[number];
 const classData = {
   classes: [
     {
-      name: "Ashtanga",
-      instructor: "Carrie Stone",
+      name: "Hatha Yoga",
+      instructor: "",
       level: "Beginner",
-      slots: "4/5",
+      type: "Hatha",
+      time: "7:00 AM - 8:00 AM",
+      slots: "",
     },
     {
-      name: "Hatha",
-      instructor: "Carrie Stone",
+      name: "Vinyasa Yoga",
+      instructor: "",
       level: "Advanced",
-      slots: "3/5",
+      type: "Vinyasa",
+      time: "8:00 AM - 9:00 AM",
+      slots: "",
+    },
+    {
+      name: "Backbends & Hip Openers",
+      instructor: "",
+      level: "Beginner",
+      type: "Flow",
+      time: "9:00 AM - 10:00 AM",
+      slots: "",
+    },
+    {
+      name: "Handstands & Arm Balances",
+      instructor: "",
+      level: "Advanced",
+      type: "Flow",
+      time: "9:00 AM - 10:00 AM",
+      slots: "",
+    },
+    {
+      name: "Core & Self-Practice",
+      instructor: "",
+      level: "Advanced",
+      type: "Flow",
+      time: "9:00 AM - 10:00 AM",
+      slots: "",
+    },
+    {
+      name: "Strong Knees & Hips",
+      instructor: "",
+      level: "Beginner",
+      type: "Flow",
+      time: "9:00 AM - 10:00 AM",
+      slots: "",
+    },
+    {
+      name: "Relaxing Flow",
+      instructor: "",
+      level: "Beginner",
+      type: "Flow",
+      time: "6:00 PM - 7:00 PM",
+      slots: "",
+    },
+    {
+      name: "Gentle Flow",
+      instructor: "",
+      level: "Beginner",
+      type: "Flow",
+      time: "8:00 AM - 9:00 AM",
+      slots: "",
+    },
+    {
+      name: "No class",
+      instructor: "",
+      level: "",
+      type: "",
+      time: "",
+      slots: "",
     },
   ],
 };
 
-// Define the schedule for which classes appear on which days
-const schedule: Record<WeekDay, (number | null)[]> = {
-  Monday: [0, null], // Regular class for both time slots
-  Tuesday: [null, 1], // Only Advanced class for second slot
-  Wednesday: [0, null], // Regular class for both time slots
-  Thursday: [null, null], // No classes
-  Friday: [0, null], // Regular class for both time slots
-  Saturday: [null, null], // No classes
-  Sunday: [null, null], // No classes
+// Update schedule: each cell is now an array of class indices (or empty array)
+const schedule: Record<WeekDay, number[][]> = {
+  Monday: [[0, 1, 2], [0], [0], [0]], // Week 1: 3 classes, others: 1 class
+  Tuesday: [[3], [4], [5], [6]],
+  Wednesday: [[7], [7], [7], [7]],
+  Thursday: [[], [], [], []], // No class
+  Friday: [[0], [0], [0], [0]],
+  Saturday: [[8], [8], [8], [8]],
 };
 
 const TimeTable = () => {
@@ -74,15 +132,15 @@ const TimeTable = () => {
   // Visible days based on screen size
   const visibleDays = isMobile ? [weekDays[currentDayIndex]] : weekDays;
 
-  // Function to get class info for a specific day and time slot
+  // Update getClassForSlot to return an array of classInfo objects
   const getClassForSlot = (day: WeekDay, timeSlotIndex: number) => {
-    const daySchedule = schedule[day];
-    const classIndex = daySchedule[timeSlotIndex];
-    return classIndex !== null ? classData.classes[classIndex] : null;
+    const classIndices = schedule[day][timeSlotIndex];
+    if (!classIndices || classIndices.length === 0) return [];
+    return classIndices.map((idx) => classData.classes[idx]);
   };
 
   return (
-    <section className="max-w-[1200px] padding-x mx-auto common-padding common-padding-bottom">
+    <section className=" padding-x  common-padding common-padding-bottom">
       <div className="">
         <div className="w-max mx-auto">
           <Image
@@ -151,7 +209,7 @@ const TimeTable = () => {
           isMobile ? "min-w-full" : "min-w-[800px] overflow-x-auto"
         }`}
       >
-        <div className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-8"}`}>
+        <div className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-7"}`}>
           <div className="border border-gray-600 text-center py-3"></div>
           {isMobile ? (
             <div className="border-y border-r bg-[#F0F0F0] border-gray-600 text-center py-3 text-sm md:text-base">
@@ -172,7 +230,7 @@ const TimeTable = () => {
         {timeSlots.map((timeSlot, timeSlotIndex) => (
           <div
             key={timeSlotIndex}
-            className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-8"}`}
+            className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-7"}`}
           >
             <div
               className={`text-center place-content-center border-x border-b border-gray-600 text-sm md:text-base ${
@@ -184,10 +242,15 @@ const TimeTable = () => {
             {isMobile
               ? (() => {
                   const day = weekDays[currentDayIndex];
-                  const classInfo = getClassForSlot(day, timeSlotIndex);
-                  return classInfo ? (
+                  const classInfos = getClassForSlot(day, timeSlotIndex);
+                  return classInfos.length > 1 ? (
+                    <MultiClassCard
+                      classInfos={classInfos}
+                      isAlternate={timeSlotIndex % 2 === 0}
+                    />
+                  ) : classInfos.length === 1 ? (
                     <Card
-                      classInfo={classInfo}
+                      classInfo={classInfos[0]}
                       isAlternate={timeSlotIndex % 2 === 0}
                     />
                   ) : (
@@ -195,11 +258,15 @@ const TimeTable = () => {
                   );
                 })()
               : weekDays.map((day, dayIndex) => {
-                  const classInfo = getClassForSlot(day, timeSlotIndex);
-                  return classInfo ? (
+                  const classInfos = getClassForSlot(day, timeSlotIndex);
+                  return classInfos.length > 1 ? (
+                    <MultiClassCard
+                      classInfos={classInfos}
+                      isAlternate={timeSlotIndex % 2 === 0}
+                    />
+                  ) : classInfos.length === 1 ? (
                     <Card
-                      key={dayIndex}
-                      classInfo={classInfo}
+                      classInfo={classInfos[0]}
                       isAlternate={timeSlotIndex % 2 === 0}
                     />
                   ) : (
@@ -223,6 +290,8 @@ interface CardProps {
     name: string;
     instructor: string;
     level: string;
+    type: string;
+    time: string;
     slots: string;
   };
   isAlternate?: boolean;
@@ -235,8 +304,11 @@ export const Card: React.FC<CardProps> = ({ classInfo, isAlternate }) => {
         isAlternate ? "bg-[#F7F5F2]" : ""
       }`}
     >
-      <div className="bg-dark-green w-full flex justify-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all">
-        <h1 className="text-sm md:text-base">{classInfo.level}</h1>
+      <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
+        <h1 className="text-sm md:text-base font-semibold">
+          {classInfo.level}
+        </h1>
+        <span className="text-xs md:text-sm">{classInfo.time}</span>
         <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
       </div>
       <div className="py-8 md:py-12 px-0.5">
@@ -246,9 +318,11 @@ export const Card: React.FC<CardProps> = ({ classInfo, isAlternate }) => {
             {classInfo.instructor}
           </p>
         </div>
-        <p className="text-sm md:text-base text-center">
-          {classInfo.slots} Slots available
-        </p>
+        {classInfo.slots && (
+          <p className="text-sm md:text-base text-center">
+            {classInfo.slots} Slots available
+          </p>
+        )}
       </div>
       <div className="bg-dark-green w-full flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
         <h1 className="text-sm md:text-base">Book Now</h1>
@@ -273,3 +347,41 @@ export const EmptyCard: React.FC<EmptyCardProps> = ({ isAlternate }) => {
     </div>
   );
 };
+
+// Add a MultiClassCard component to handle multiple classes in a single cell
+interface MultiClassCardProps {
+  classInfos: CardProps["classInfo"][];
+  isAlternate?: boolean;
+}
+
+const MultiClassCard: React.FC<MultiClassCardProps> = ({
+  classInfos,
+  isAlternate,
+}) => (
+  <div
+    className={`border-r border-b border-gray-600 py-8 md:py-12 flex flex-col items-center justify-center whitespace-pre-line ${
+      isAlternate ? "bg-[#F7F5F2]" : ""
+    } group relative`}
+  >
+    {/* Hover overlay for all names */}
+    <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
+      {classInfos.map((info, idx) => (
+        <h1 key={idx} className="text-sm md:text-base font-semibold">
+          {info.name}
+        </h1>
+      ))}
+      <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
+    </div>
+    {/* Show only names in the cell */}
+    {classInfos.map((info, idx) => (
+      <div key={idx} className="mb-2 last:mb-0 text-center">
+        <span className="block font-semibold text-lg md:text-xl">
+          {info.name}
+        </span>
+        {idx !== classInfos.length - 1 && (
+          <hr className="my-2 border-t border-gray-300 w-2/3 mx-auto" />
+        )}
+      </div>
+    ))}
+  </div>
+);
