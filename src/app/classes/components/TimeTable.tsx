@@ -91,14 +91,16 @@ const classData = {
   ],
 };
 
-// Update schedule: each cell is now an array of class indices (or empty array)
-const schedule: Record<WeekDay, number[][]> = {
-  Monday: [[0, 1, 2], [0], [0], [0]], // Week 1: 3 classes, others: 1 class
-  Tuesday: [[3], [4], [5], [6]],
-  Wednesday: [[7], [7], [7], [7]],
-  Thursday: [[], [], [], []], // No class
-  Friday: [[0], [0], [0], [0]],
-  Saturday: [[8], [8], [8], [8]],
+// Define the schedule for which classes appear on which days and weeks
+// Use the index of classData.classes, or null for empty
+// Now supports arrays of class indices for multiple classes in a single cell
+const schedule: Record<WeekDay, (number | number[] | null)[]> = {
+  Monday: [[0, 1, 2], 5, 0, 0],
+  Tuesday: [1, 2, [3, 4], 4], // Multiple classes on Tuesday Week 3
+  Wednesday: [5, 5, 5, 5],
+  Thursday: [7, 7, 7, 7],
+  Friday: [[0, 1], 0, 0, 0], // Multiple classes on Friday Week 1
+  Saturday: [6, 6, 6, 6],
 };
 
 const TimeTable = () => {
@@ -132,11 +134,42 @@ const TimeTable = () => {
   // Visible days based on screen size
   const visibleDays = isMobile ? [weekDays[currentDayIndex]] : weekDays;
 
-  // Update getClassForSlot to return an array of classInfo objects
+  // Function to get class info for a specific day and time slot
   const getClassForSlot = (day: WeekDay, timeSlotIndex: number) => {
-    const classIndices = schedule[day][timeSlotIndex];
-    if (!classIndices || classIndices.length === 0) return [];
-    return classIndices.map((idx) => classData.classes[idx]);
+    const classEntry = schedule[day][timeSlotIndex];
+
+    // If it's an array of class indices, return an array of class info
+    if (Array.isArray(classEntry)) {
+      return classEntry.map((index) =>
+        index === 7
+          ? {
+              name: "No class",
+              instructor: "",
+              level: "",
+              type: "",
+              time: "",
+              slots: "",
+            }
+          : classData.classes[index]
+      );
+    }
+
+    // If it's a single class index
+    const classIndex = classEntry as number | null;
+    return classIndex !== null && classIndex !== 7
+      ? [classData.classes[classIndex]]
+      : classIndex === 7
+      ? [
+          {
+            name: "No class",
+            instructor: "",
+            level: "",
+            type: "",
+            time: "",
+            slots: "",
+          },
+        ]
+      : null;
   };
 
   return (
@@ -242,15 +275,10 @@ const TimeTable = () => {
             {isMobile
               ? (() => {
                   const day = weekDays[currentDayIndex];
-                  const classInfos = getClassForSlot(day, timeSlotIndex);
-                  return classInfos.length > 1 ? (
-                    <MultiClassCard
-                      classInfos={classInfos}
-                      isAlternate={timeSlotIndex % 2 === 0}
-                    />
-                  ) : classInfos.length === 1 ? (
-                    <Card
-                      classInfo={classInfos[0]}
+                  const classInfoArray = getClassForSlot(day, timeSlotIndex);
+                  return classInfoArray ? (
+                    <MultipleClassCard
+                      classInfoArray={classInfoArray}
                       isAlternate={timeSlotIndex % 2 === 0}
                     />
                   ) : (
@@ -258,15 +286,11 @@ const TimeTable = () => {
                   );
                 })()
               : weekDays.map((day, dayIndex) => {
-                  const classInfos = getClassForSlot(day, timeSlotIndex);
-                  return classInfos.length > 1 ? (
-                    <MultiClassCard
-                      classInfos={classInfos}
-                      isAlternate={timeSlotIndex % 2 === 0}
-                    />
-                  ) : classInfos.length === 1 ? (
-                    <Card
-                      classInfo={classInfos[0]}
+                  const classInfoArray = getClassForSlot(day, timeSlotIndex);
+                  return classInfoArray ? (
+                    <MultipleClassCard
+                      key={dayIndex}
+                      classInfoArray={classInfoArray}
                       isAlternate={timeSlotIndex % 2 === 0}
                     />
                   ) : (
@@ -331,6 +355,60 @@ export const Card: React.FC<CardProps> = ({ classInfo, isAlternate }) => {
   );
 };
 
+// Component for multiple classes in a single cell
+interface MultipleClassCardProps {
+  classInfoArray: {
+    name: string;
+    instructor: string;
+    level: string;
+    type: string;
+    time: string;
+    slots: string;
+  }[];
+  isAlternate?: boolean;
+}
+
+export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
+  classInfoArray,
+  isAlternate,
+}) => {
+  return (
+    <div
+      className={`space-y-2 justify-between flex flex-col gap-2 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all ${
+        isAlternate ? "bg-[#F7F5F2]" : ""
+      }`}
+    >
+      <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
+        <h1 className="text-sm md:text-base font-semibold">
+          {classInfoArray[0].level}
+        </h1>
+        <span className="text-xs md:text-sm">{classInfoArray[0].time}</span>
+        <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
+      </div>
+
+      <div className="py-4 md:py-14 px-0.5 w-full">
+        {classInfoArray.map((classInfo, index) => (
+          <div key={index} className={`${index > 0 ? "mt-3 pt-3" : ""}`}>
+            <h1 className="text-lg md:text-xl text-center">{classInfo.name}</h1>
+            <p className="text-sm md:text-base text-center">
+              {classInfo.instructor}
+            </p>
+            {classInfo.slots && (
+              <p className="text-xs md:text-sm text-center">
+                {classInfo.slots} Slots available
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-dark-green w-full flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
+        <h1 className="text-sm md:text-base">Book Now</h1>
+      </div>
+    </div>
+  );
+};
+
 // Component for empty slots
 interface EmptyCardProps {
   isAlternate?: boolean;
@@ -347,41 +425,3 @@ export const EmptyCard: React.FC<EmptyCardProps> = ({ isAlternate }) => {
     </div>
   );
 };
-
-// Add a MultiClassCard component to handle multiple classes in a single cell
-interface MultiClassCardProps {
-  classInfos: CardProps["classInfo"][];
-  isAlternate?: boolean;
-}
-
-const MultiClassCard: React.FC<MultiClassCardProps> = ({
-  classInfos,
-  isAlternate,
-}) => (
-  <div
-    className={`border-r border-b border-gray-600 py-8 md:py-12 flex flex-col items-center justify-center whitespace-pre-line ${
-      isAlternate ? "bg-[#F7F5F2]" : ""
-    } group relative`}
-  >
-    {/* Hover overlay for all names */}
-    <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
-      {classInfos.map((info, idx) => (
-        <h1 key={idx} className="text-sm md:text-base font-semibold">
-          {info.name}
-        </h1>
-      ))}
-      <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
-    </div>
-    {/* Show only names in the cell */}
-    {classInfos.map((info, idx) => (
-      <div key={idx} className="mb-2 last:mb-0 text-center">
-        <span className="block font-semibold text-lg md:text-xl">
-          {info.name}
-        </span>
-        {idx !== classInfos.length - 1 && (
-          <hr className="my-2 border-t border-gray-300 w-2/3 mx-auto" />
-        )}
-      </div>
-    ))}
-  </div>
-);
