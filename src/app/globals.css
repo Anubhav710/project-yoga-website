@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .header-txt {
-  font-size: clamp(50px, 10.6vw, 200px);
+  font-size: clamp(50px, 8vw, 200px);
 }
 .hero-image-size {
   height: clamp(500px, 28vw, 800px);

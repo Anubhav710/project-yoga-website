@@ -16,9 +16,9 @@ const contactUs = () => {
           className="w-full h-full object-cover "
         />
       </CommonHero> */}
-      <CommonHero text="Retreats" className="aspect-[16/7]">
+      <CommonHero text="Contact Us" className="aspect-[16/7]">
         <Image
-          src={"/assets/images/retreat/h-banner.jpg"}
+          src={"/assets/images/contact/Banner.jpg"}
           alt="retreathero-image"
           width={2100}
           height={2100}

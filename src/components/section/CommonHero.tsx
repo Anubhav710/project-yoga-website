@@ -45,11 +45,11 @@ const CommonHero = ({
     <section id="common-heading">
       <div className="w-full ">
         <div className={`relative  w-full flex items-center  ${className}`}>
-          <div className="w-full h-[70%] bg-red-300"></div>
+          <div className="w-full h-[70%] bg-red-300 relative">{children}</div>
           <div className="absolute -top-8">
             <h1
               id="common-heading-txt"
-              className={`uppercase header-txt opacity-0 relative left-full top-24 leading-[62px] ${ashtanga.className} text-dark-green`}
+              className={`uppercase header-txt opacity-0 relative left-full top-[5.1rem] leading-[62px] ${ashtanga.className} text-dark-green`}
             >
               {text}
             </h1>
