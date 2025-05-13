@@ -32,10 +32,6 @@ export const navItems = [
     title: "Contact",
     href: "/contact-us",
   },
-  {
-    title: "Book Class",
-    href: "/book-class",
-  },
 ];
 
 const Header = () => {

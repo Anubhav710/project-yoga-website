@@ -15,7 +15,7 @@ const Gallery = () => {
         </div>
         <div className="h-full sm:col-span-2 sm:col-start-2 relative sm:row-start-1 sm:row-end-3 ">
           <Image
-            src={"/assets/images/pricing/bottom-images/pricing-bottom.jpg"}
+            src={"/assets/images/pricing/bottom-images/7.jpg"}
             alt="image-1"
             fill
             className="w-full h-full object-cover"
