@@ -7,10 +7,19 @@ import Image from "next/image";
 const contactUs = () => {
   return (
     <section className="space-y-24">
-      <CommonHero text="Contact Us">
+      {/* <CommonHero text="Contact Us">
         <Image
           src={"/assets/images/contact/Banner.jpg"}
           alt="hero-image"
+          width={2100}
+          height={2100}
+          className="w-full h-full object-cover "
+        />
+      </CommonHero> */}
+      <CommonHero text="Retreats" className="aspect-[16/7]">
+        <Image
+          src={"/assets/images/retreat/h-banner.jpg"}
+          alt="retreathero-image"
           width={2100}
           height={2100}
           className="w-full h-full object-cover "

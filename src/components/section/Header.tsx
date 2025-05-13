@@ -39,10 +39,10 @@ const Header = () => {
   console.log(pathname);
 
   return (
-    <header className="sm:py-3 py-4 px-3 md:px-2.5 lg:px-5   relative   bg-white ">
+    <header className="sm:py-3 py-4 px-3 md:px-2.5 lg:px-5   relative ">
       <div className="flex items-center gap-1 justify-between">
         <Link href={"/"}>
-          <Image src={"/logo.jpg"} alt="logo" width={115} height={100} />
+          <Image src={"/logo.jpg"} alt="logo" width={100} height={100} />
         </Link>
         <nav className="lg:space-x-10 md:space-x-6  text-dark-green md:flex hidden">
           {navItems.slice(0, 6).map((item) => (

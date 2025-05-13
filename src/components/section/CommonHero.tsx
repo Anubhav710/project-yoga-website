@@ -19,7 +19,7 @@ const CommonHero = ({
 
     mm.add("(min-width: 319px) and (max-width: 768px)", () => {
       gsap.to("#common-heading-txt", {
-        left: 0,
+        left: 120,
         opacity: 1,
         delay: 1,
         duration: 0.8,
@@ -27,7 +27,7 @@ const CommonHero = ({
     });
     mm.add("(min-width: 768px)", () => {
       gsap.to("#common-heading-txt", {
-        left: 0,
+        left: 50,
         opacity: 1,
 
         duration: 0.8,
@@ -43,13 +43,13 @@ const CommonHero = ({
   }, []);
   return (
     <section id="common-heading">
-      <div className="w-full mt-16">
-        <div className={`relative  w-full ${className}`}>
-          <div className="w-full">{children}</div>
+      <div className="w-full ">
+        <div className={`relative  w-full flex items-center  ${className}`}>
+          <div className="w-full h-[70%] bg-red-300"></div>
           <div className="absolute -top-8">
             <h1
               id="common-heading-txt"
-              className={`uppercase header-txt opacity-0 relative left-full leading-[62px] ${ashtanga.className} text-dark-green`}
+              className={`uppercase header-txt opacity-0 relative left-full top-24 leading-[62px] ${ashtanga.className} text-dark-green`}
             >
               {text}
             </h1>

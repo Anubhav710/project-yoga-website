@@ -192,8 +192,8 @@ const TimeTable = () => {
   };
 
   return (
-    <section className=" padding-x  common-padding common-padding-bottom">
-      <div className="">
+    <section className=" max-w-screen-xl mx-auto padding-x  common-padding common-padding-bottom">
+      <div>
         <div className="w-max mx-auto">
           <Image
             src={
@@ -395,8 +395,8 @@ export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
 
   return (
     <div
-      className={`space-y-2 justify-between flex flex-col gap-2 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all ${
-        isAlternate ? "bg-[#F7F5F2]" : ""
+      className={`space-y-2 justify-center   flex flex-col gap-2 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all ${
+        isAlternate ? "bg-[#F7F5F2] " : ""
       }`}
     >
       {!isNoClass && (
@@ -409,7 +409,7 @@ export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
         </div>
       )}
 
-      <div className="py-4 md:py-14 px-0.5 w-full">
+      <div className="py-4 md:py-14 px-0.5 w-full  flex flex-col ">
         {classInfoArray.map((classInfo, index) => (
           <div key={index} className={`${index > 0 ? "mt-3 pt-3" : ""}`}>
             <h1 className="text-lg md:text-xl text-center">{classInfo.name}</h1>
@@ -426,7 +426,7 @@ export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
       </div>
 
       {!isNoClass && (
-        <div className="bg-dark-green w-full flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
+        <div className="bg-dark-green w-full absolute bottom-0 flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
           <h1 className="text-sm md:text-base">Book Now</h1>
         </div>
       )}

@@ -13,7 +13,7 @@ const Links = ({
   return (
     <Link href={href} className={`group relative`}>
       <div className="">
-        <h1 className="uppercase lg:text-xl">{children}</h1>
+        <h1 className="uppercase">{children}</h1>
         <div
           className={`absolute left-0  bottom-0 w-full scale-x-0 group-hover:scale-x-100 origin-left duration-300 transition-transform h-[1.4px] bg-dark-green ${className}`}
         ></div>
