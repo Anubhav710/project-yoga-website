@@ -17,6 +17,7 @@ type WeekDay = (typeof weekDays)[number];
 const classData = {
   classes: [
     {
+      id: 1,
       name: "Hatha Yoga",
       instructor: "",
       level: "Beginner",
@@ -25,6 +26,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 2,
       name: "Vinyasa Yoga",
       instructor: "",
       level: "Advanced",
@@ -33,6 +35,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 3,
       name: "Backbends & Hip Openers",
       instructor: "",
       level: "Beginner",
@@ -41,6 +44,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 4,
       name: "Handstands & Arm Balances",
       instructor: "",
       level: "Advanced",
@@ -49,6 +53,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 5,
       name: "Core & Self-Practice",
       instructor: "",
       level: "Advanced",
@@ -57,6 +62,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 6,
       name: "Strong Knees & Hips",
       instructor: "",
       level: "Beginner",
@@ -65,6 +71,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 7,
       name: "Relaxing Flow",
       instructor: "",
       level: "Beginner",
@@ -73,6 +80,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 8,
       name: "Gentle Flow",
       instructor: "",
       level: "Beginner",
@@ -81,6 +89,7 @@ const classData = {
       slots: "",
     },
     {
+      id: 9,
       name: "No class",
       instructor: "",
       level: "",
@@ -95,12 +104,22 @@ const classData = {
 // Use the index of classData.classes, or null for empty
 // Now supports arrays of class indices for multiple classes in a single cell
 const schedule: Record<WeekDay, (number | number[] | null)[]> = {
-  Monday: [[0, 1, 2], 5, 0, 0],
-  Tuesday: [1, 2, [3, 4], 4], // Multiple classes on Tuesday Week 3
-  Wednesday: [5, 5, 5, 5],
+  Monday: [
+    [0, 1, 6],
+    [0, 1, 6],
+    [0, 1, 6],
+    [0, 1, 6],
+  ],
+  Tuesday: [[2], [3], [4], [5]], // Multiple classes on Tuesday Week 3
+  Wednesday: [[6], [6], [6], [6]],
   Thursday: [7, 7, 7, 7],
-  Friday: [[0, 1], 0, 0, 0], // Multiple classes on Friday Week 1
-  Saturday: [6, 6, 6, 6],
+  Friday: [
+    [0, 1, 6],
+    [0, 1, 6],
+    [0, 1, 6],
+    [0, 1, 6],
+  ], // Multiple classes on Friday Week 1
+  Saturday: [[7], [7], [7], [7]],
 };
 
 const TimeTable = () => {
@@ -141,7 +160,7 @@ const TimeTable = () => {
     // If it's an array of class indices, return an array of class info
     if (Array.isArray(classEntry)) {
       return classEntry.map((index) =>
-        index === 7
+        index === 8
           ? {
               name: "No class",
               instructor: "",
@@ -372,19 +391,23 @@ export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
   classInfoArray,
   isAlternate,
 }) => {
+  const isNoClass = classInfoArray[0].name === "No class";
+
   return (
     <div
       className={`space-y-2 justify-between flex flex-col gap-2 cursor-pointer items-center border-r border-b border-gray-600 relative group hover:bg-[#E2E8E0] duration-500 transition-all ${
         isAlternate ? "bg-[#F7F5F2]" : ""
       }`}
     >
-      <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
-        <h1 className="text-sm md:text-base font-semibold">
-          {classInfoArray[0].level}
-        </h1>
-        <span className="text-xs md:text-sm">{classInfoArray[0].time}</span>
-        <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
-      </div>
+      {!isNoClass && (
+        <div className="bg-dark-green w-full flex flex-col items-center py-2 absolute -top-4 text-white font-thin opacity-0 group-hover:opacity-100 duration-500 transition-all z-10">
+          <h1 className="text-sm md:text-base font-semibold">
+            {classInfoArray[0].level}
+          </h1>
+          <span className="text-xs md:text-sm">{classInfoArray[0].time}</span>
+          <div className="bg-dark-green h-4 w-4 rotate-45 absolute -bottom-2"></div>
+        </div>
+      )}
 
       <div className="py-4 md:py-14 px-0.5 w-full">
         {classInfoArray.map((classInfo, index) => (
@@ -402,9 +425,11 @@ export const MultipleClassCard: React.FC<MultipleClassCardProps> = ({
         ))}
       </div>
 
-      <div className="bg-dark-green w-full flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
-        <h1 className="text-sm md:text-base">Book Now</h1>
-      </div>
+      {!isNoClass && (
+        <div className="bg-dark-green w-full flex justify-center py-2 text-white font-thin scale-y-0 origin-bottom group-hover:scale-y-100 duration-200 transition-all">
+          <h1 className="text-sm md:text-base">Book Now</h1>
+        </div>
+      )}
     </div>
   );
 };
