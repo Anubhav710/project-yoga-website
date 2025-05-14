@@ -31,7 +31,7 @@ const TravelVideo = () => {
               Our next yoga travel destination
             </h4>
             <a
-              href="/retreats"
+              href="/retreat"
               className="group flex justify-center gap-3 mt-1 items-center"
             >
               <p className="uppercase text-sm relative after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-dark-green after:left-0 after:bottom-0 after:transition-all after:duration-300 group-hover:after:w-full">

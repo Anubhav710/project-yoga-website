@@ -28,7 +28,7 @@ const aboutUs = () => {
           alt="retreathero-image"
           width={2100}
           height={2100}
-          className="w-full h-full object-cover "
+          className="w-full h-full object-cover"
         />
       </CommonHero>
 

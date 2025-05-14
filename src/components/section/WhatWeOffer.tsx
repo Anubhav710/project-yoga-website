@@ -139,7 +139,7 @@ const WhatWeOffer: React.FC = () => {
             What We Offer
           </h1>
         </div>
-        <div className="flex flex-col bg-white">
+        <div className="flex flex-col ">
           {/* Tabs */}
           <div className="overflow-x-auto ">
             <ul className="flex flex-nowrap md:flex-wrap  w-full justify-start md:justify-between space-x-4 md:space-x-0 p-4  md:p-0">

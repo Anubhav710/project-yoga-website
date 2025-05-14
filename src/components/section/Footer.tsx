@@ -61,10 +61,6 @@ const Footer = () => {
                   {index === 2 &&
                     [
                       {
-                        name: "Ground floor, Yoga/ Preeti & Anushka, Asiad Community Centre, P.A, near Minerals Cafe, Asian Games Village Complex, Siri Fort, New Delhi, Delhi 110049",
-                        icon: <MapPin size={16} className="shrink-0 mt-1" />,
-                      },
-                      {
                         name: "+91-9312641005",
                         path: "tel:+91-9312641005",
                         icon: <Phone size={16} className="shrink-0" />,
@@ -73,6 +69,10 @@ const Footer = () => {
                         name: "payoga.info@gmail.com",
                         path: "mailto:payoga.info@gmail.com",
                         icon: <Mail size={16} className="shrink-0" />,
+                      },
+                      {
+                        name: "Ground floor, Yoga/ Preeti & Anushka, Asiad Community Centre, P.A, near Minerals Cafe, Asian Games Village Complex, Siri Fort, New Delhi, Delhi 110049",
+                        icon: <MapPin size={16} className="shrink-0 mt-1" />,
                       },
                     ].map((item, idx) => (
                       <li

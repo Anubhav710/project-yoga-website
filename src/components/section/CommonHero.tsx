@@ -45,7 +45,7 @@ const CommonHero = ({
     <section id="common-heading">
       <div className="w-full ">
         <div className={`relative  w-full flex items-center  ${className}`}>
-          <div className="w-full h-[70%] bg-red-300 relative">{children}</div>
+          <div className="w-full h-[70%]  relative">{children}</div>
           <div className="absolute -top-8">
             <h1
               id="common-heading-txt"
