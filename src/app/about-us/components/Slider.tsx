@@ -41,7 +41,7 @@ const Slider = () => {
         className="h-[60vh] "
       >
         {images.map((img) => (
-          <SwiperSlide className=" h-full w-full relative">
+          <SwiperSlide key={img} className=" h-full w-full relative">
             <Image src={img} alt="image" fill className="object-cover" />
           </SwiperSlide>
         ))}

@@ -2,6 +2,7 @@ import React from "react";
 import TimeTable from "./components/TimeTable";
 
 import Image from "next/image";
+import Banner from "@/components/common/banner";
 
 const classes = () => {
   return (
@@ -24,6 +25,7 @@ const classes = () => {
           className="w-full h-full object-cover "
         />
       </CommonHero> */}
+      <Banner title="classes" src="/assets/images/classes/banner.jpg" />
       <TimeTable />
     </main>
   );

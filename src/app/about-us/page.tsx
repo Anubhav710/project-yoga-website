@@ -8,6 +8,7 @@ import Image from "next/image";
 import YogaStyles from "@/components/section/Styles";
 import { BenifitsYoga } from "@/constants";
 import BenefitsYogas from "./components/BenefitsYogas";
+import Banner from "@/components/common/banner";
 
 const aboutUs = () => {
   return (
@@ -30,6 +31,7 @@ const aboutUs = () => {
           className="w-full h-full object-cover"
         />
       </CommonHero> */}
+      <Banner title="Our Studio" src="/assets/images/about/about-banner.jpg" />
 
       <About />
 

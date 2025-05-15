@@ -4,6 +4,7 @@ import TravelVideo from "@/components/section/Video";
 
 import Image from "next/image";
 import Slider2 from "@/components/section/Slider2";
+import Banner from "@/components/common/banner";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
           className="w-full h-full object-cover "
         />
       </CommonHero> */}
+      <Banner src="/assets/images/retreat/h-banner.jpg" title="Retreats" />
       <About />
 
       <Slider2 />

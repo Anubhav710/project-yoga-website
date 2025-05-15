@@ -44,7 +44,7 @@ const BookClassForm = () => {
           <input
             type="text"
             id="full-name"
-            className="border-b border-dark-green/40 focus:outline-none focus:border-b focus:border-b-dark-green p-2"
+            className="border-b border-dark-green/40 bg-transparent focus:outline-none focus:border-b focus:border-b-dark-green p-2"
           />
         </div>
         <div className="flex flex-col">
@@ -52,7 +52,7 @@ const BookClassForm = () => {
           <input
             type="email"
             id="email"
-            className="border-b border-dark-green/40 focus:outline-none focus:border-b focus:border-b-dark-green p-2"
+            className="border-b border-dark-green/40 bg-transparent focus:outline-none focus:border-b focus:border-b-dark-green p-2"
           />
         </div>
         <div className="flex flex-col">
@@ -60,7 +60,7 @@ const BookClassForm = () => {
           <input
             type="tel"
             id="phone"
-            className="border-b border-dark-green/40 focus:outline-none focus:border-b focus:border-b-dark-green p-2"
+            className="border-b border-dark-green/40 bg-transparent focus:outline-none focus:border-b focus:border-b-dark-green p-2"
           />
         </div>
         <div className="flex flex-col gap-4">
@@ -77,7 +77,7 @@ const BookClassForm = () => {
 
             {/* Custom dropdown trigger */}
             <div
-              className="cursor-pointer border-b bg-transparent border-dark-green/40 focus:outline-none py-2 flex justify-between items-center text-dark-green"
+              className="cursor-pointer border-b bg-transparent border-dark-green/40 bg-transparent focus:outline-none py-2 flex justify-between items-center text-dark-green"
               onClick={() => setIsOpen(!isOpen)}
               tabIndex={0}
               onKeyDown={(e) => {
@@ -139,7 +139,7 @@ const BookClassForm = () => {
           <textarea
             name="message"
             id="message"
-            className="border-b border-dark-green/40 focus:outline-none focus:border-b focus:border-b-dark-green p-2"
+            className="border-b border-dark-green/40 bg-transparent focus:outline-none focus:border-b focus:border-b-dark-green p-2"
             rows={1}
           ></textarea>
         </div>

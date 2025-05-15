@@ -39,7 +39,7 @@ const Header = () => {
   console.log(pathname);
 
   return (
-    <header className="sm:py-5 py-4 px-3 md:px-3 lg:px-5 sm:bg-transparent bg-white    relative ">
+    <header className="sm:p-7 p-3  sm:bg-transparent bg-white    relative ">
       <div className="flex items-center  justify-between">
         <Link href={"/"} className="inline-block">
           <Image
