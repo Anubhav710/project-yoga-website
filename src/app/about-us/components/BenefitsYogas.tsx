@@ -5,7 +5,7 @@ const BenefitsYogas = () => {
   return (
     <section className="bg-dark-green padding-x py-20">
       <div className="grid lg:grid-cols-2 grid-cols-1">
-        <div className="relative flex justify-center bg-[url('/image.png')] bg-contain bg-no-repeat bg-center">
+        <div className="relative flex justify-center bg-[url('/leaf.png')] bg-contain bg-no-repeat bg-center">
           <div className=" w-[80%]">
             <Image
               src={"/assets/images/about/about.png"}
