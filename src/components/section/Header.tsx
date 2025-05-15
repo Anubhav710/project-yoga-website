@@ -39,10 +39,16 @@ const Header = () => {
   console.log(pathname);
 
   return (
-    <header className="sm:py-3 py-4 px-3 md:px-2.5 lg:px-5   relative ">
-      <div className="flex items-center gap-1 justify-between">
-        <Link href={"/"}>
-          <Image src={"/logo.jpg"} alt="logo" width={100} height={100} />
+    <header className="sm:py-5 py-4 px-3 md:px-3 lg:px-5 sm:bg-transparent bg-white    relative ">
+      <div className="flex items-center  justify-between">
+        <Link href={"/"} className="inline-block">
+          <Image
+            src={"/assets/images/logo.png"}
+            alt="logo"
+            width={180}
+            height={100}
+            className="w-[120px] h-auto sm:w-[150px] md:w-[180px]"
+          />
         </Link>
         <nav className="lg:space-x-10 md:space-x-6  text-dark-green md:flex hidden">
           {navItems.slice(0, 6).map((item) => (
@@ -58,7 +64,7 @@ const Header = () => {
         <div className="md:flex items-center space-x-10 text-dark-green hidden">
           <Link href={"/book-class"} className="group">
             <h1 className="uppercase text-[1.2rem] desktop:text-[1rem] font-bold">
-              Book Class
+              Book a Class
             </h1>
             <div
               className={`w-full scale-x-100 group-hover:scale-x-0 origin-left  duration-500 transition-all h-[1.4px] bg-dark-green `}

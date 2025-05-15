@@ -1,6 +1,6 @@
 import React from "react";
 import TimeTable from "./components/TimeTable";
-import CommonHero from "@/components/section/CommonHero";
+
 import Image from "next/image";
 
 const classes = () => {
@@ -15,7 +15,7 @@ const classes = () => {
           className="w-full h-full object-cover object-center "
         />
       </CommonHero> */}
-      <CommonHero text="classes" className="aspect-[16/7]">
+      {/* <CommonHero text="classes" className="aspect-[16/7]">
         <Image
           src={"/assets/images/classes/banner.jpg"}
           alt="retreathero-image"
@@ -23,7 +23,7 @@ const classes = () => {
           height={2100}
           className="w-full h-full object-cover "
         />
-      </CommonHero>
+      </CommonHero> */}
       <TimeTable />
     </main>
   );

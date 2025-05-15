@@ -6,7 +6,7 @@ const ImageSection = () => {
     <div className="flex flex-col md:flex-row  md:space-y-0    gap-20  sm:gap-32 pt-2 common-padding">
       <div className="w-[87%] md:w-[60%] md:pt-32 self-start">
         <Image
-          src={"/pice-image.png"}
+          src={"/assets/images/shapes/pice-image.png"}
           width={700}
           height={500}
           alt="image"

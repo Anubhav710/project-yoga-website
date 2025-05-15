@@ -31,7 +31,7 @@ const CTA2 = () => {
       </div>
       <div className="absolute -top-36 -left-4 hidden z-50 md:block">
         <Image
-          src={"/images/main-home-img-3.png"}
+          src={"/assets/images/shapes/main-home-img-3.png"}
           alt="main-home-img-3.png"
           width={400}
           height={1000}

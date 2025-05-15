@@ -62,7 +62,7 @@ const BenefitsYoga = () => {
             <div className="flex mt-12">
               <div className="ml-auto relative">
                 <Image
-                  src={"/about-image-benifits.png"}
+                  src={"/assets/images/about/aboutbg.png"}
                   alt=""
                   width={700}
                   height={400}

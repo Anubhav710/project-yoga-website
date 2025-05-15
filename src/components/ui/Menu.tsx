@@ -84,7 +84,7 @@ const Menu = () => {
       <div
         ref={menuRef}
         className={`w-full bg-white absolute ${
-          isOpen ? " border-b" : "border-none"
+          isOpen ? " border-none" : "border-none"
         } border-dark-green top-full left-0 z-40 h-0 overflow-hidden`}
       >
         <ul

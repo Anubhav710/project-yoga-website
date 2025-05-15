@@ -2,7 +2,7 @@ import React from "react";
 
 const Arrow2 = () => {
   return (
-    <div className="border border-white bg-[url('/images/green-noise-1920x1200-1.jpg')] px-3 py-4">
+    <div className="border border-white bg-[url('/assets/images/bg/green-noise.jpg')] px-3 py-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="23.3"

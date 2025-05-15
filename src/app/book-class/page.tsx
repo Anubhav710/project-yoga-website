@@ -1,4 +1,3 @@
-import CommonHero from "@/components/section/CommonHero";
 import Image from "next/image";
 import React from "react";
 import BookClassForm from "./components/BookClassForm";
@@ -15,7 +14,7 @@ const BookClass = () => {
           className="w-full h-full object-cover "
         />
       </CommonHero> */}
-      <CommonHero text="Book Class" className="aspect-[16/7]">
+      {/* <CommonHero text="Book Class" className="aspect-[16/7]">
         <Image
           src={"/assets/images/book-class/banner.jpg"}
           alt="retreathero-image"
@@ -23,7 +22,7 @@ const BookClass = () => {
           height={2100}
           className="w-full h-full object-cover "
         />
-      </CommonHero>
+      </CommonHero> */}
       <BookClassForm />
     </main>
   );

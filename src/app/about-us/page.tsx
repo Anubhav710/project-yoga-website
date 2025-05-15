@@ -4,7 +4,6 @@ import Slider from "./components/Slider";
 import BenefitsYoga from "./components/BenefitsYoga";
 import InfiniteTextScroll from "./components/InfiniteTextScroll";
 
-import CommonHero from "@/components/section/CommonHero";
 import Image from "next/image";
 import YogaStyles from "@/components/section/Styles";
 import { BenifitsYoga } from "@/constants";
@@ -22,7 +21,7 @@ const aboutUs = () => {
           className="w-full h-full object-cover"
         />
       </CommonHero> */}
-      <CommonHero text="Our Studio" className="aspect-[16/7]">
+      {/* <CommonHero text="Our Studio" className="aspect-[16/7]">
         <Image
           src={"/assets/images/about/about-banner.jpg"}
           alt="retreathero-image"
@@ -30,7 +29,7 @@ const aboutUs = () => {
           height={2100}
           className="w-full h-full object-cover"
         />
-      </CommonHero>
+      </CommonHero> */}
 
       <About />
 

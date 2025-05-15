@@ -120,3 +120,37 @@
 .padding-x {
   @apply md:px-5 px-2;
 }
+
+/* Testimonials Swiper Styles */
+.testimonials-swiper {
+  padding: 2rem 0;
+}
+
+.testimonials-swiper .swiper-button-prev,
+.testimonials-swiper .swiper-button-next {
+  width: 3rem !important;
+  height: 3rem !important;
+  background: white !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+}
+
+.testimonials-swiper .swiper-button-prev:after,
+.testimonials-swiper .swiper-button-next:after {
+  font-size: 1.25rem !important;
+  color: #1a472a !important;
+}
+
+.testimonials-swiper .swiper-button-prev {
+  left: -1rem !important;
+}
+
+.testimonials-swiper .swiper-button-next {
+  right: -1rem !important;
+}
+
+.testimonials-swiper .swiper-button-disabled {
+  opacity: 0.35 !important;
+  cursor: auto !important;
+  pointer-events: none !important;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import Gallery from "../pricing-plans/components/Gallery";
 import ContactUs from "@/components/section/ContactUs";
-import CommonHero from "@/components/section/CommonHero";
+
 import Image from "next/image";
 
 const contactUs = () => {
@@ -16,7 +16,7 @@ const contactUs = () => {
           className="w-full h-full object-cover "
         />
       </CommonHero> */}
-      <CommonHero text="Contact Us" className="aspect-[16/7]">
+      {/* <CommonHero text="Contact Us" className="aspect-[16/7]">
         <Image
           src={"/assets/images/contact/Banner.jpg"}
           alt="retreathero-image"
@@ -24,7 +24,7 @@ const contactUs = () => {
           height={2100}
           className="w-full h-full object-cover "
         />
-      </CommonHero>
+      </CommonHero> */}
       <ContactUs />
       <Gallery />
     </section>

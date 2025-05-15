@@ -15,7 +15,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[url('/images/green-noise-1920x1200-1.jpg')] padding-x bg-cover common-padding pb-12 pt-24 mt-16 overflow-x-clip overflow-y-visible">
+    <footer className="bg-[url('/assets/images/bg/green-noise.jpg')] padding-x bg-cover common-padding pb-12 pt-24 mt-16 overflow-x-clip overflow-y-visible">
       <div>
         <div className="w-full flex flex-col md:flex-row justify-between pb-8">
           <div className="w-full md:w-1/2 space-y-3 mb-5 md:mb-0">
@@ -61,10 +61,11 @@ const Footer = () => {
                   {index === 2 &&
                     [
                       {
-                        name: "+91-9312641005",
-                        path: "tel:+91-9312641005",
+                        name: "+91-9312641005, +91-8447148364",
+                        path: "tel:+91-9312641005, +91-8447148364",
                         icon: <Phone size={16} className="shrink-0" />,
                       },
+
                       {
                         name: "payoga.info@gmail.com",
                         path: "mailto:payoga.info@gmail.com",
@@ -77,7 +78,9 @@ const Footer = () => {
                     ].map((item, idx) => (
                       <li
                         key={idx}
-                        className={idx === 0 ? "max-w-[250px] text-sm" : ""}
+                        className={
+                          idx === 0 || idx === 1 ? "max-w-[250px] text-sm" : ""
+                        }
                       >
                         <a
                           href={item.path}

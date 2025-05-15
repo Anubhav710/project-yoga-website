@@ -1,94 +1,58 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-
-import Image from "next/image";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import { ashtanga } from "@/app/fonts";
-
-import Arrow from "../ui/Arrow";
 import { useAnimateTextFromRightToLeft } from "@/lib/utils";
 
-interface SliderImage {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import Arrow from "../ui/Arrow";
+
+interface Testimonial {
   id: number;
   review: string;
-  image: string;
   name: string;
+  role?: string;
 }
 
-const sliderImage: SliderImage[] = [
+const testimonials: Testimonial[] = [
   {
     id: 1,
     review:
-      "Really enjoying my yoga journey with Preeti Ma'am and Anushka. They are really supportive and ensure that everyone feels comfortable in all yoga postures by giving alternate asana options and relax times between asanas.",
-    image: "/images/h1-event-img-3.jpg",
-    name: "John Doe",
+      "I owe it to Preeti & Anushka for making me fall back in love with yoga and keeping me grounded and healthy during my two month stay in Delhi 💙 The community they have created is so wonderful and welcoming, and the atmosphere in their studio is just perfect.",
+    name: "Anneke de Vries",
+    role: "Local Guide",
   },
   {
     id: 2,
     review:
-      "Yoga has transformed my life, providing me with the tools to manage stress and find inner peace.",
-    image: "/images/h1-event-img-3.jpg",
-    name: "Jane Smith",
+      "Practising yoga with them the first thing in the morning genuinely puts me in a good mood for the rest of the day. The ambiance is serene, the people exude warmth and our instructors are just the sweetest, most encouraging of them all!",
+    name: "Anamaya Jamwal",
   },
   {
     id: 3,
     review:
-      "Practicing yoga has been a game changer for my mental and physical health. I feel stronger and more balanced.",
-    image: "/images/h1-event-img-3.jpg",
-    name: "Alice Johnson",
+      "Finding P.A.Yoga is like stumbling upon a hidden gem in a treasure chest - it's a precious discovery that's worth cherishing. Not only do I feel lucky to learn from two amazing teachers, but I also appreciate their unique approach to teaching.",
+    name: "K N",
   },
   {
     id: 4,
     review:
-      "The yoga classes have helped me connect with my body and mind in ways I never thought possible.",
-    image: "/images/h1-event-img-4.jpg",
-    name: "Bob Brown",
+      "I love the fact that the classes can be conducted at home. Always inspired by what Preeti and Anushka can do as yoga instructors! What really kept me going the extra effort taken by Anushka to help me attempt the headstand (Sirsasana).",
+    name: "Sai Sharan",
+    role: "Local Guide",
   },
   {
     id: 5,
     review:
-      "Through yoga, I've learned to embrace challenges and find calm in the chaos of life.",
-    image: "/images/retreat-video-img-1.jpg",
-    name: "Emily Davis",
+      "This is easily one of the best yoga classes I have ever been to. I have been doing yoga for many years but could never do crow pose and headstand. Within a few weeks I was able to do those unassisted. Preeti and Anushka have a way of making everything possible.",
+    name: "CK Vijayakumar",
   },
 ];
 
 const Testimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const sliderRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (sliderRef.current && sliderRef.current.children) {
-        gsap.fromTo(
-          sliderRef.current.children,
-          { opacity: 0, x: 100 },
-          { opacity: 1, x: 0, duration: 1, stagger: 0.2 }
-        );
-      }
-    }, sliderRef);
-
-    return () => ctx.revert();
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderImage.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? sliderImage.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Ensure currentIndex is within bounds
-  const currentSlide = sliderImage[currentIndex] || {
-    id: 0,
-    review: "No review available",
-    image: "/images/default-image.png", // Placeholder image
-    name: "Unknown",
-  };
-
   useAnimateTextFromRightToLeft(
     "#testimonials-heading-cnt",
     "#textimonials-heading",
@@ -97,8 +61,8 @@ const Testimonials: React.FC = () => {
   );
 
   return (
-    <section id="testimonials-section" className="padding-x ">
-      <div className="max-w-screen-xl   mx-auto    ">
+    <section id="testimonials-section" className="padding-x">
+      <div className="max-w-screen-xl mx-auto">
         <div id="testimonials-heading-cnt">
           <h1
             id="textimonials-heading"
@@ -107,38 +71,44 @@ const Testimonials: React.FC = () => {
             Testimonials
           </h1>
         </div>
-        <div className="flex h-full">
-          <div className="flex-1 h-full flex items-center justify-center  my-auto">
-            <div
-              className="w-max rotate-180 cursor-pointer  "
-              onClick={handlePrev}
-            >
-              <Arrow />
-            </div>
+
+        <div className="relative">
+          <div id="custom-btn-prev">
+            <Arrow className="z-20  rotate-180 absolute top-1/2 -translate-y-1/2 cursor-pointer" />
           </div>
-          {/* main element section  */}
-          <div className="flex-[15] flex  items-center h-full ">
-            <div className="space-y-5 flex  w-full" ref={sliderRef}>
-              <div
-                key={currentSlide.id}
-                className="w-full flex flex-col items-center    "
-              >
-                <h1 className="testimonials-heding w-[70%] mx-auto text-center font-bold text-dark-green">
-                  {currentSlide.review}
-                </h1>
-                <div className="mt-5 ">
-                  <div className="relative  md:h-16 mb-2 md:w-16 w-8 h-8 mx-auto overflow-hidden rounded-full">
-                    <Image src={currentSlide.image} alt="image" fill />
+
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              prevEl: "#custom-btn-prev",
+              nextEl: "#custom-btn-next",
+            }}
+            className="testimonials-swiper "
+          >
+            {testimonials.map((testimonial) => (
+              <SwiperSlide key={testimonial.id}>
+                <div className=" max-w-screen-md mx-auto  pt-8">
+                  <h2 className="testimonials-heading  mx-auto text-center font-bold text-dark-green">
+                    {testimonial.review}
+                  </h2>
+                  <div className="text-center mt-2">
+                    <p className="font-semibold text-dark-green">
+                      {testimonial.name}
+                    </p>
+                    {testimonial.role && (
+                      <p className="text-sm text-gray-600">
+                        {testimonial.role}
+                      </p>
+                    )}
                   </div>
-                  <small className="text-center">{currentSlide.name}</small>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex-1 h-full flex items-center justify-center  p-1 my-auto">
-            <div className="cursor-pointer " onClick={handleNext}>
-              <Arrow />
-            </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div id="custom-btn-next">
+            <Arrow className="z-20  cursor-pointer absolute top-1/2 -translate-y-1/2 right-0" />
           </div>
         </div>
       </div>

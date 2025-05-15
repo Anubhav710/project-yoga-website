@@ -33,7 +33,7 @@ const WhatWeOffer: React.FC = () => {
   const content: Record<string, Content> = {
     ashtanga: {
       title: " Ashtanga Yoga",
-      image: "/astanga-yoga.png",
+      image: "/assets/images/yoga-styles/astanga-yoga.png",
       desc: "Get ready to ignite your inner fire with Ashtanga yoga! This traditional practice is all about movement, breath, and energy. You'll flow through a set sequence of postures, building strength, flexibility, and focus. Ashtanga yoga is like a powerful workout for your body and mind. It's challenging, but it's also incredibly rewarding. You'll feel strong, energized, and ready to take on the day.",
       benefit: [
         "Builds internal heat and energy",
@@ -45,7 +45,7 @@ const WhatWeOffer: React.FC = () => {
     },
     vinyasa: {
       title: " Vinyasa Yoga",
-      image: "/vinyasa-yoga.png",
+      image: "/assets/images/yoga-styles/vinyasa-yoga.png",
       desc: "Unleash your creativity with Vinyasa yoga! This dynamic practice is all about movement and flow. You'll link breath with movement, flowing from one pose to another in a continuous sequence. Vinyasa yoga is like a dance, but instead of music, you'll be moving to the rhythm of your breath. It's a fun and challenging way to build strength, flexibility, and cardiovascular endurance. You'll feel alive, energized, and connected to your body.",
       benefit: [
         "Improves coordination and balance",
@@ -57,7 +57,7 @@ const WhatWeOffer: React.FC = () => {
     },
     surya: {
       title: "Surya Namaskar",
-      image: "/surya-namaskar.png",
+      image: "/assets/images/yoga-styles/surya-namaskar.png",
       desc: "Surya Namaskar, also known as Sun Salutation, is a timeless sequence of postures that embodies the essence of yoga, igniting the inner fire, building strength, flexibility, and endurance, and nurturing the body, mind, and spirit to promote mental clarity, focus, and discipline. As a harmonious flow of movements, it synchronizes the body and mind, enhancing coordination, balance, and flexibility, while also calming the mind and soothing the body, promoting relaxation, balance, and inner peace, and connecting us to our inner selves, fostering a deeper sense of calm, clarity, and well-being.",
       benefit: [
         "Harmonizes the nervous system, promoting emotional balance and resilience",
@@ -69,7 +69,7 @@ const WhatWeOffer: React.FC = () => {
     },
     hatha: {
       title: " Hatha Yoga",
-      image: "/Hatha-Yoga.png",
+      image: "/assets/images/yoga-styles/Hatha-Yoga.png",
       desc: "Find your calm with Hatha yoga! This traditional practice is all about balance and harmony. You'll hold postures for longer periods of time, allowing you to fully experience the physical, mental, and emotional benefits of each pose. Hatha yoga is like a soothing balm for your body and mind. It's calming, grounding, and restorative. You'll feel relaxed, centered, and at peace.",
       benefit: [
         "Reduces stress and anxiety",
@@ -81,7 +81,7 @@ const WhatWeOffer: React.FC = () => {
     },
     practice: {
       title: " Vinyasa Practise",
-      image: "/surya-namaskar.png",
+      image: "/assets/images/yoga-styles/surya-namaskar.png",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus eum eveniet aut atque, eaque labore quisquam qui quaerat velit hic! Quasi atque dolorem placeat rerum mollitia fugit libero cupiditate et?",
       benefit: [
         "Offers Strength Training",
@@ -94,7 +94,7 @@ const WhatWeOffer: React.FC = () => {
     },
     iyengar: {
       title: " Iyengar Yoga",
-      image: "/surya-namaskar.png",
+      image: "/assets/images/yoga-styles/surya-namaskar.png",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus eum eveniet aut atque, eaque labore quisquam qui quaerat velit hic! Quasi atque dolorem placeat rerum mollitia fugit libero cupiditate et?",
       benefit: [
         "Offers Strength Training",
@@ -107,7 +107,7 @@ const WhatWeOffer: React.FC = () => {
     },
     kundalini: {
       title: " Kundalini Yoga",
-      image: "/vinyasa-yoga.png",
+      image: "/assets/images/yoga-styles/vinyasa-yoga.png",
       desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus eum eveniet aut atque, eaque labore quisquam qui quaerat velit hic! Quasi atque dolorem placeat rerum mollitia fugit libero cupiditate et?",
       benefit: [
         "Offers Strength Training",
