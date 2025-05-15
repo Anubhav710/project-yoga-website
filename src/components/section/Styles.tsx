@@ -29,7 +29,7 @@ const YogaStyles = ({ data, hide }: { data: YogaStyle[]; hide?: boolean }) => {
         } `}
       >
         <Image
-          src={"/images/main-home-offset-img-2.png"}
+          src={"/assets/images/shapes/main-home-offset-img-2.png"}
           alt="hero"
           width={300}
           height={1000}

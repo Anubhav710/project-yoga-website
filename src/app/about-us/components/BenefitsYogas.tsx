@@ -3,13 +3,16 @@ import React from "react";
 
 const BenefitsYogas = () => {
   return (
-    <section className="bg-dark-green padding-x py-20">
+    <section className="bg-dark-green padding-x py-20 ">
       <div className="grid lg:grid-cols-2 grid-cols-1">
-        <div className="relative flex justify-center bg-[url('/leaf.png')] bg-contain bg-no-repeat bg-center">
-          <div className=" w-[80%]">
+        <div
+          style={{ backgroundImage: 'url("/1.svg")' }}
+          className="relative flex  justify-center bg-auto bg-no-repeat  bg-[center_10px]   "
+        >
+          <div className="w-[80%]">
             <Image
-              src={"/assets/images/about/about.png"}
-              alt=""
+              src="/assets/images/about/about.png"
+              alt="Yoga benefits illustration"
               width={389}
               height={329}
               className="w-full h-full object-cover"
