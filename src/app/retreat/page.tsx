@@ -9,15 +9,6 @@ import Banner from "@/components/common/banner";
 const page = () => {
   return (
     <section className="space-y-24">
-      {/* <CommonHero text="Retreats" className="aspect-[16/7]">
-        <Image
-          src={"/assets/images/retreat/h-banner.jpg"}
-          alt="retreathero-image"
-          width={2100}
-          height={2100}
-          className="w-full h-full object-cover "
-        />
-      </CommonHero> */}
       <Banner src="/assets/images/retreat/h-banner.jpg" title="Retreats" />
       <About />
 

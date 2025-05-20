@@ -13,24 +13,6 @@ import Banner from "@/components/common/banner";
 const aboutUs = () => {
   return (
     <div className="space-y-24">
-      {/* <CommonHero text="Our Studio">
-        <Image
-          src={"/assets/images/about/about-banner.jpg"}
-          alt="hero-image"
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover"
-        />
-      </CommonHero> */}
-      {/* <CommonHero text="Our Studio" className="aspect-[16/7]">
-        <Image
-          src={"/assets/images/about/about-banner.jpg"}
-          alt="retreathero-image"
-          width={2100}
-          height={2100}
-          className="w-full h-full object-cover"
-        />
-      </CommonHero> */}
       <Banner title="Our Studio" src="/assets/images/about/about-banner.jpg" />
 
       <About />
