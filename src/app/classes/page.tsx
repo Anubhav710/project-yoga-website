@@ -7,24 +7,6 @@ import Banner from "@/components/common/banner";
 const classes = () => {
   return (
     <main className="space-y-24">
-      {/* <CommonHero text="classes" className="aspect-[16/6]">
-        <Image
-          src={"/assets/images/classes/banner.jpg"}
-          alt="hero-image"
-          width={2100}
-          height={2100}
-          className="w-full h-full object-cover object-center "
-        />
-      </CommonHero> */}
-      {/* <CommonHero text="classes" className="aspect-[16/7]">
-        <Image
-          src={"/assets/images/classes/banner.jpg"}
-          alt="retreathero-image"
-          width={2100}
-          height={2100}
-          className="w-full h-full object-cover "
-        />
-      </CommonHero> */}
       <Banner title="classes" src="/assets/images/classes/banner.jpg" />
       <TimeTable />
     </main>
