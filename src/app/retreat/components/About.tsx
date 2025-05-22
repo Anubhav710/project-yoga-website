@@ -19,9 +19,7 @@ const About = () => {
     <section className="padding-x">
       <div className=" w-max mx-auto pb-10">
         <Image
-          src={
-            "https://ashtanga.qodeinteractive.com/wp-content/uploads/2023/04/testimonails-icon.svg"
-          }
+          src={"/assets/images/about/testimonials-img1.png"}
           alt="image"
           width={64}
           height={120}
@@ -38,7 +36,7 @@ const About = () => {
           scenery, and forge unforgettable bonds with like-minded yogis.
         </h1>
       </div>
-      <div className="max-w-screen-2xl mx-auto  mt-24">
+      <div className="max-w-screen-2xl mx-auto  relative mt-24">
         <Swiper
           breakpoints={{
             310: {

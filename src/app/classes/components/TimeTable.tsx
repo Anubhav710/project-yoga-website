@@ -196,9 +196,7 @@ const TimeTable = () => {
       <div>
         <div className="w-max mx-auto">
           <Image
-            src={
-              "https://ashtanga.qodeinteractive.com/wp-content/uploads/2023/04/testimonials-img1.png"
-            }
+            src={"/assets/images/about/testimonials-img1.png"}
             alt="yoga-image"
             width={64}
             height={64}

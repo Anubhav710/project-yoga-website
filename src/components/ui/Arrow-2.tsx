@@ -13,13 +13,13 @@ const Arrow2 = () => {
           d="M11.6,0c0,0-0.1,11.3-11.5,14.4"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
+          strokeWidth="1"
         ></path>
         <path
           d="M11.6,0c0,0,0.1,11.3,11.5,14.4"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
+          strokeWidth="1"
         ></path>
       </svg>
     </div>
