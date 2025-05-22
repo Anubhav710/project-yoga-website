@@ -605,3 +605,11 @@ export const BenifitsYoga = [
     ),
   },
 ];
+
+export const retreatImages = [
+  "/assets/images/retreat/slider/1.jpg",
+  "/assets/images/retreat/slider/2.jpg",
+  "/assets/images/retreat/slider/3.jpg",
+  "/assets/images/retreat/slider/4.jpg",
+  "/assets/images/retreat/slider/5.jpg",
+];

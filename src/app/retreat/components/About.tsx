@@ -1,18 +1,11 @@
 "use client";
 import { ashtanga } from "@/app/fonts";
+import { retreatImages } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-
-const img = [
-  "/assets/images/retreat/slider/1.jpg",
-  "/assets/images/retreat/slider/2.jpg",
-  "/assets/images/retreat/slider/3.jpg",
-  "/assets/images/retreat/slider/4.jpg",
-  "/assets/images/retreat/slider/5.jpg",
-];
 
 const About = () => {
   return (
@@ -67,7 +60,7 @@ const About = () => {
           loop={true}
           modules={[Autoplay]}
         >
-          {img.map((img, index) => (
+          {retreatImages.map((img, index) => (
             <SwiperSlide key={index}>
               <div
                 className={`pl-36 relative ${index % 2 === 0 ? "mt-32" : ""}`}
