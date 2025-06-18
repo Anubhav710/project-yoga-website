@@ -32,12 +32,12 @@ const TravelVideo = () => {
             </h4>
             <a
               href="/retreat"
-              className="group flex justify-center gap-3 mt-1 items-center"
+              className="group flex justify-center gap-3 mt-1 items-center  w-max mx-auto"
             >
               <p className="uppercase text-sm relative after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-dark-green after:left-0 after:bottom-0 after:transition-all after:duration-300 group-hover:after:w-full">
                 Read More
               </p>
-              <div className="transition-transform duration-300 group-hover:translate-x-1">
+              <div>
                 <Arrow />
               </div>
             </a>

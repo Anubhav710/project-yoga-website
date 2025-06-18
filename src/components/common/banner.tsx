@@ -26,7 +26,7 @@ const Banner = ({ title, src }: { title: string; src: string }) => {
     });
   }, []);
   return (
-    <div className="relative w-screen  md:pt-[4rem] lg:pt-[6.2rem] 2xl:pt-[9rem] pt-9">
+    <div className="relative w-full  md:pt-[4rem] lg:pt-[6.2rem] 2xl:pt-[9rem] pt-9">
       <div
         id="hero-heading"
         className="absolute top-0 z-20 w-max left-full opacity-0"

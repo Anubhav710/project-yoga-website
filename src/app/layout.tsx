@@ -5,6 +5,7 @@ import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
 import ScrollToTop from "@/components/section/ScrollToTop";
 import WhatsApp from "@/components/section/WhatsApp";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,6 +42,18 @@ export default function RootLayout({
           backgroundAttachment: "fixed",
         }}
       >
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <Header />
         {children}
         <ScrollToTop />
